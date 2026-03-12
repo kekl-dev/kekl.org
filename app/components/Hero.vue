@@ -2,10 +2,10 @@
 </script>
 
 <template>
-  <section class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-60">
+  <section class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-32 md:pt-60">
     <!-- Background Image with Overlay -->
     <div class="absolute inset-0 z-0">
-      <img src="~/assets/img/hero-img.png" alt="Stanford Alumni" class="w-full h-full object-cover">
+      <img src="~/assets/img/hero-img.png" alt="Loyola Alumni" class="w-full h-full object-cover">
       <!-- Dark gradient overlay for premium look -->
       <div class="absolute inset-0 bg-linear-to-b from-black/70 via-black/40 to-black/90"></div>
     </div>
@@ -13,18 +13,18 @@
     <!-- Centered Content -->
     <div class="relative z-10 max-w-5xl px-8 text-center text-white flex-1 flex flex-col justify-center">
       <p class="text-md md:text-xl font-medium mb-6 animate-fade-in tracking-widest text-accent-yellow drop-shadow-sm uppercase">
-        Stanford Alumni Directory
+        Loyola Alumni Directory
       </p>
       
-      <h1 class="text-4xl md:text-7xl font-serif font-black mb-10 leading-[1.05] animate-slide-up tracking-tight">
+      <h1 class="text-5xl md:text-7xl font-serif font-black mb-8 md:mb-10 leading-[1.05] animate-slide-up tracking-tight">
         Who Will<br> 
         <span class="text-white italic relative inline-block">
           You Discover?
         </span>
       </h1>
 
-      <p class="text-md md:text-xl font-medium max-w-2xl mx-auto mb-16 text-white/90 leading-relaxed drop-shadow-md">
-        Connect with your Stanford Alumni community. Explore your official destination for finding alumni of Stanford.
+      <p class="text-[15px] md:text-xl font-medium max-w-2xl mx-auto mb-12 md:mb-16 text-white/90 leading-relaxed drop-shadow-md px-4 md:px-0">
+        Connect with your Loyola Alumni community. Explore your official destination for finding alumni of Loyola.
       </p>
 
       <!-- Action Links -->
@@ -70,7 +70,7 @@
     <!-- Bottom Attribution Bar -->
     <div class="relative w-full py-10 text-center text-sm font-semibold text-white/60">
       <div class="max-w-5xl mx-auto px-8">
-        The Alumni Directory is available to those who have completed a minimum of three quarters of a degree-granting program at Stanford.
+        The Alumni Directory is available to those who have completed a minimum of three quarters of a degree-granting program at Loyola.
       </div>
     </div>
   </section>

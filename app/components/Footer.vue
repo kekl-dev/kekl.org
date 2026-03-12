@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const mapLink = "https://maps.app.goo.gl/bpam6Qfk66JSzRA4A"
 </script>
 
 <template>
@@ -16,30 +17,29 @@
         <div class="grid grid-cols-1 md:grid-cols-4 gap-10 text-[15px] text-[#cccccc] leading-relaxed mb-16">
           <!-- Column 1: Address -->
           <div class="space-y-1">
-            <p class="font-bold text-white">Loyola Alumni Association</p>
-            <p>Frances C. Arrillaga Alumni Center</p>
-            <p>326 Galvez Street</p>
-            <p>Stanford, CA 94305-6105</p>
-            <a href="#" class="inline-flex items-center gap-1 text-white hover:text-loyola-red transition-colors font-bold mt-2">
+            <p class="font-bold text-white">Loyola High School</p>
+            <p>Karang Anyar Street No.37</p>
+            <p>Semarang, Central Java 50135</p>
+            <a :href="mapLink" class="inline-flex items-center gap-1 text-white hover:text-loyola-red transition-colors font-bold mt-2 text-[14px]">
               Map 
-              <span class="text-loyola-red text-[12px] font-black">↗</span>
+              <span class="text-loyola-red text-[11px] font-black">↗</span>
             </a>
           </div>
 
           <!-- Column 2 -->
           <ul class="space-y-4 font-bold text-white">
-            <li><a href="#" class="hover:underline text-[15px]">Get to Know SAA</a></li>
-            <li><a href="#" class="hover:underline text-[15px]">STANFORD Magazine</a></li>
-            <li><a href="#" class="hover:underline text-[15px]">Contact SAA</a></li>
+            <li><a href="#" class="hover:underline text-[15px]">Get to Know SKL</a></li>
+            <li><a href="#" class="hover:underline text-[15px]">LOYOLA Magazine</a></li>
+            <li><a href="#" class="hover:underline text-[15px]">Contact SKL</a></li>
             <li><a href="#" class="hover:underline text-[15px]">Help</a></li>
           </ul>
 
           <!-- Column 3 -->
           <ul class="space-y-4 text-white">
-            <li><a href="#" class="hover:underline text-[15px]">Access SAA Member Card</a></li>
+            <li><a href="#" class="hover:underline text-[15px]">Access SKL Member Card</a></li>
             <li><a href="#" class="hover:underline text-[15px]">Check your alumni email</a></li>
             <li><a href="#" class="hover:underline text-[15px]">My Alumni Account</a></li>
-            <li><a href="#" class="hover:underline text-[15px]">Give to Stanford</a></li>
+            <li><a href="#" class="hover:underline text-[15px]">Give to Loyola</a></li>
           </ul>
 
           <!-- Column 4 -->
@@ -70,33 +70,39 @@
     </div>
 
     <!-- Bottom Tier (Red Section) -->
-    <div class="bg-loyola-red pt-10 pb-8 px-4">
-      <div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-8 items-start">
+    <div class="bg-loyola-red pt-10 pb-10 px-6">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-8 items-center md:items-start">
         <!-- Bottom Logo -->
-        <div class="shrink-0 pt-1">
-          <img src="~/assets/img/logo-loyola.png" alt="Loyola University" class="h-14 w-auto object-contain">
+        <div class="shrink-0 pt-1 flex justify-center w-full md:w-auto mb-2 md:mb-0">
+          <img src="~/assets/img/logo-loyola.png" alt="Loyola University" class="h-12 md:h-14 w-auto object-contain">
         </div>
 
         <!-- Bottom Links -->
-        <div class="flex-1 text-[13px] md:pl-10">
-          <ul class="flex flex-wrap gap-x-6 gap-y-2 font-bold mb-4 text-[15px]">
-            <li><a href="#" class="hover:underline">Stanford Home</a></li>
-            <li><a href="#" class="hover:underline">Maps & Directions</a></li>
-            <li><a href="#" class="hover:underline">Search Stanford</a></li>
-            <li><a href="#" class="hover:underline">Emergency Info</a></li>
-          </ul>
-          
-          <ul class="flex flex-wrap gap-x-6 gap-y-2 mb-4 text-white/90 font-medium">
-            <li><a href="#" class="hover:underline">Terms of Use</a></li>
-            <li><a href="#" class="hover:underline">Privacy</a></li>
-            <li><a href="#" class="hover:underline">Copyright</a></li>
-            <li><a href="#" class="hover:underline">Trademarks</a></li>
-            <li><a href="#" class="hover:underline">Non-Discrimination</a></li>
-            <li><a href="#" class="hover:underline">Accessibility</a></li>
-          </ul>
+        <div class="flex-1 w-full flex flex-col items-center md:items-start md:pl-10">
+          <!-- Content Container: Columns on Mobile, Rows on Desktop -->
+          <div class="flex flex-row md:flex-col justify-center md:justify-start gap-x-8 sm:gap-x-16 md:gap-y-3 mb-8 md:mb-6 w-full md:w-auto max-w-[400px] md:max-w-none">
+            <!-- Group 1: Left Col (Mobile) / Row 1 (Desktop) -->
+            <ul class="flex flex-col md:flex-row text-left gap-y-4 md:gap-x-6 lg:gap-x-8 font-bold text-[14px] md:text-[15px] text-white">
+              <li><a href="#" class="hover:underline">Loyola Home</a></li>
+              <li><a href="#" class="hover:underline">Maps & Directions</a></li>
+              <li><a href="#" class="hover:underline">Search Loyola</a></li>
+              <li><a href="#" class="hover:underline">Emergency Info</a></li>
+            </ul>
+            
+            <!-- Group 2: Right Col (Mobile) / Row 2 (Desktop) -->
+            <ul class="flex flex-col md:flex-row flex-wrap text-left gap-y-4 md:gap-x-5 lg:gap-x-6 font-bold md:font-medium text-[14px] md:text-[13px] lg:text-[14px] text-white md:text-white/90">
+              <li><a href="#" class="hover:underline">Terms of Use</a></li>
+              <li><a href="#" class="hover:underline">Privacy</a></li>
+              <li><a href="#" class="hover:underline">Copyright</a></li>
+              <li><a href="#" class="hover:underline">Trademarks</a></li>
+              <li><a href="#" class="hover:underline">Non-Discrimination</a></li>
+              <li><a href="#" class="hover:underline">Accessibility</a></li>
+            </ul>
+          </div>
 
-          <p class="text-white/80">
-            © Loyola University. Semarang, Central Java 50134.
+          <!-- Copyright -->
+          <p class="text-white md:text-white/80 text-[13px] md:text-[13px] text-center md:text-left mt-2 md:mt-0">
+            © Loyola High School. Semarang, Central Java 50135.
           </p>
         </div>
       </div>

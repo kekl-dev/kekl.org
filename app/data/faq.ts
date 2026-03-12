@@ -52,7 +52,7 @@ export const faqData = [
     answer: "Students typically gain access to the Alumni Directory during the final quarter of their degree-granting program."
   },
   {
-    question: "What's the difference between the Stanford Alumni Directory and Stanford Alumni Mentoring (SAM)?",
+    question: "What's the difference between the Loyola Alumni Directory and Loyola Alumni Mentoring (SAM)?",
     answer: "The Alumni Directory is a broad networking tool to find and connect with all alumni. SAM is a dedicated platform specifically designed to pair students with alumni mentors."
   },
   {

@@ -42,7 +42,7 @@
 
   /* Selection style */
   ::selection {
-    background-color: var(--color-stanford-red);
+    background-color: var(--color-Loyola-red);
     color: white;
   }
 }

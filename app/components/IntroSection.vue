@@ -2,27 +2,27 @@
 </script>
 
 <template>
-  <section class="bg-white py-20 px-36 overflow-hidden">
-    <div class="max-w-[1700px] mx-auto flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+  <section class="bg-white py-16 md:py-20 px-6 md:px-36 overflow-hidden">
+    <div class="max-w-[1700px] mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
       
       <!-- Left Content: Text & CTA -->
-      <div class="flex-1 space-y-10">
-        <h2 class="text-xl md:text-4xl font-serif font-black text-[#1a1a1a] leading-[1.1] tracking-tight">
-          All Stanford, All Together,<br>
+      <div class="flex-1 space-y-6 md:space-y-10 text-left">
+        <h2 class="text-3xl md:text-4xl font-serif font-black text-[#1a1a1a] leading-[1.1] tracking-tight">
+          All Loyola, All Together,<br class="hidden md:block">
           All in One Place. All Right Now.
         </h2>
         
-        <div class="space-y-6 max-w-2xl text-[14px] md:text-[16px] text-[#4a4a4a] leading-relaxed font-medium">
+        <div class="space-y-4 md:space-y-6 max-w-2xl mx-auto lg:mx-0 text-[15px] md:text-[16px] text-[#4a4a4a] leading-relaxed font-medium">
           <p>
-            From campus activities to career experience and more, there are so many ways to find, connect with, and support Stanford students and alumni. Update your profile today and start making more meaningful connections.
+            From campus activities to career experience and more, there are so many ways to find, connect with, and support Loyola students and alumni. Update your profile today and start making more meaningful connections.
           </p>
           <p>
             Check out our <a href="#" class="text-loyola-red border-b-2 border-loyola-red font-bold hover:text-loyola-red/80 transition-colors">video</a> for tips on how to use the Alumni Directory and start making connections today!
           </p>
         </div>
 
-        <div class="pt-4">
-          <a href="#" class="group relative inline-flex items-center gap-2 text-loyola-red text-xl font-bold transition-all">
+        <div class="pt-2 md:pt-4">
+          <a href="#" class="group relative inline-flex items-center gap-2 text-loyola-red text-lg md:text-xl font-bold transition-all">
             <span class="border-b-2 border-loyola-red pb-1 group-hover:border-loyola-red/40 transition-colors">Update your Directory profile</span>
           </a>
         </div>
@@ -36,7 +36,7 @@
             <iframe 
               class="w-full h-full"
               src="https://www.youtube.com/embed/E9JcZlfTJZE" 
-              title="Welcome to the Stanford Alumni Directory"
+              title="Welcome to the Loyola Alumni Directory"
               frameborder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
               allowfullscreen

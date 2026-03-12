@@ -22,36 +22,36 @@ const benefits = [
   <section class="bg-[#f9f9f9] py-24 px-8 overflow-hidden">
     <div class="max-w-6xl mx-auto text-center">
       <!-- Heading Section -->
-      <div class="max-w-4xl mx-auto space-y-8 mb-20 animate-fade-in">
-        <h2 class="text-2xl md:text-5xl font-serif font-black text-[#2d2d2d] leading-tight tracking-tight">
+      <div class="max-w-4xl mx-auto space-y-4 md:space-y-8 mb-12 md:mb-20 animate-fade-in">
+        <h2 class="text-3xl md:text-5xl font-serif font-black text-[#2d2d2d] leading-tight tracking-tight">
           Your Alumni Community<br>
           Is at Your Fingertips
         </h2>
         
-        <p class="text-[14px] md:text-[16px] text-[#4a4a4a] leading-relaxed font-medium">
-          The Alumni Directory is the only verified online listing of Stanford alumni. 
+        <p class="text-[15px] md:text-[16px] text-[#4a4a4a] leading-relaxed font-medium px-4 md:px-0">
+          The Alumni Directory is the only verified online listing of Loyola alumni. 
           Whether you're looking to reconnect with a classmate, seek advice, discover alumni with similar interests, or find out if a company is a right fit for you, the Alumni Directory is a helpful resource for alumni and students looking to make personal and professional connections.
         </p>
       </div>
 
       <!-- Grid Section -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 mb-12 md:mb-20">
         <div 
           v-for="(benefit, index) in benefits" 
           :key="index"
           class="bg-white rounded-xl overflow-hidden shadow-lg border border-black/5 flex flex-col hover:shadow-2xl transition-all duration-300 animate-slide-up"
           :style="{ animationDelay: `${(index + 1) * 0.1}s` }"
         >
-          <div class="h-[300px] relative overflow-hidden">
+          <div class="h-[200px] md:h-[300px] relative overflow-hidden">
             <img 
               :src="benefit.image" 
               :alt="benefit.title" 
               class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
             >
           </div>
-          <div class="px-6 py-6 flex-1 flex flex-col text-left space-y-3">
-            <h3 class="text-xl font-bold text-[#1a1a1a]">{{ benefit.title }}</h3>
-            <p class="text-[16px] text-[#4a4a4a] leading-relaxed">
+          <div class="px-5 py-5 md:px-6 md:py-6 flex-1 flex flex-col text-left space-y-2 md:space-y-3">
+            <h3 class="text-xl md:text-xl font-bold text-[#1a1a1a] leading-snug">{{ benefit.title }}</h3>
+            <p class="text-[14px] md:text-[16px] text-[#4a4a4a] leading-relaxed">
               {{ benefit.description }}
             </p>
           </div>

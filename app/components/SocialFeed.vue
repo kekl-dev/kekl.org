@@ -103,8 +103,8 @@ onMounted(() => {
     <div class="max-w-[1400px] mx-auto">
       
       <!-- Section Header -->
-      <div class="text-center mb-16">
-        <h2 class="text-4xl md:text-5xl font-bold text-[#1a1a1a] mb-8 font-serif tracking-tight">
+      <div class="text-center mb-10 md:mb-16">
+        <h2 class="text-3xl md:text-5xl font-bold text-[#1a1a1a] mb-6 md:mb-8 font-serif tracking-tight">
           Get Social
         </h2>
       </div>
@@ -159,8 +159,8 @@ onMounted(() => {
           </a>
 
           <!-- Caption Section -->
-          <div class="p-5">
-            <p class="text-[13px] text-[#4a4a4a] whitespace-pre-wrap leading-relaxed">
+          <div class="p-4 md:p-5">
+            <p class="text-[12px] md:text-[13px] text-[#4a4a4a] whitespace-pre-wrap leading-relaxed">
               {{ truncateCaption(post.caption, 180) }}
             </p>
             <a :href="post.permalink" target="_blank" class="mt-3 inline-block text-[11px] font-bold text-gray-400 uppercase tracking-wide hover:text-gray-700 transition-colors">
