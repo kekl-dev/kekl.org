@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  /* Brand Palette from User */
+  --color-loyola-red: #8c1515;
+  --color-accent-yellow: #fbff35;
+  --color-loyola-blue: #012496;
+  
+  /* Semantic Mappings */
+  --color-primary: var(--color-loyola-red);
+  --color-secondary: var(--color-loyola-blue);
+  --color-accent: var(--color-accent-yellow);
+  
+  /* Modern UI Colors */
+  --color-bg-base: #111;
+  --color-bg-card: rgba(255, 255, 255, 0.05);
+  
+  --color-text-title: #ffffff;
+  --color-text-body: #e5e5e5;
+  --color-text-muted: #a1a1aa;
+
+  /* Fonts */
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+
+  /* Spacing / Sizes */
+  --header-height: 110px;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    color: var(--color-text-body);
+    background-color: var(--color-bg-base);
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: var(--font-serif);
+  }
+
+  /* Selection style */
+  ::selection {
+    background-color: var(--color-stanford-red);
+    color: white;
+  }
+}
