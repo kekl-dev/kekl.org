@@ -18,5 +18,10 @@ export default defineNuxtConfig({
     '@nuxt/icon'
   ],
 
-  css: ['~/assets/css/main.css']
+  css: ['~/assets/css/main.css'],
+  runtimeConfig: {
+    public: {
+      spreadsheetApi: process.env.SPREADSHEET_API
+    }
+  }
 })

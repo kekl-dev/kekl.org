@@ -12,6 +12,7 @@ useHead({
     <main>
       <Hero />
       <IntroSection />
+      <Programs />
       <AlumniBenefits />
       <SocialFeed />
       <FaqSection />

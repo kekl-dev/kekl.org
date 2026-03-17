@@ -8,16 +8,16 @@
       <!-- Left Content: Text & CTA -->
       <div class="flex-1 space-y-6 md:space-y-10 text-left">
         <h2 class="text-3xl md:text-4xl font-serif font-black text-[#1a1a1a] leading-[1.1] tracking-tight">
-          All Loyola, All Together,<br class="hidden md:block">
-          All in One Place. All Right Now.
+          Connect • Share • Collaborate<br>
+          All in <span class="highlight">One Place</span>
         </h2>
         
         <div class="space-y-4 md:space-y-6 max-w-2xl mx-auto lg:mx-0 text-[15px] md:text-[16px] text-[#4a4a4a] leading-relaxed font-medium">
           <p>
-            From campus activities to career experience and more, there are so many ways to find, connect with, and support Loyola students and alumni. Update your profile today and start making more meaningful connections.
+            Find various events, experiences and many ways to connect with, and support other KEKL member. Update your profile today and start making more meaningful and impactful connections.
           </p>
           <p>
-            Check out our <a href="#" class="text-loyola-red border-b-2 border-loyola-red font-bold hover:text-loyola-red/80 transition-colors">video</a> for tips on how to use the Alumni Directory and start making connections today!
+            Check out our <a href="#" class="text-loyola-red border-b-2 border-loyola-red font-bold hover:text-loyola-red/80 transition-colors">video</a> for tips on how to user the Alumni Directory and start making connections today!
           </p>
         </div>
 

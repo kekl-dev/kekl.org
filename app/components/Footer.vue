@@ -5,14 +5,14 @@ const mapLink = "https://maps.app.goo.gl/bpam6Qfk66JSzRA4A"
 <template>
   <footer class="text-white w-full">
     <!-- Top Tier (Dark Section with Background) -->
-    <div class="relative bg-[#1c1d1a] pt-16 pb-[100px] px-8 overflow-hidden">
+    <div class="relative bg-[#1c1d1a] pt-16 pb-[100px] overflow-hidden">
       <!-- Background Image Overlay (Subtle) -->
       <div class="absolute inset-0 z-0 opacity-20 mix-blend-luminosity">
         <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=2000&auto=format&fit=crop" alt="Campus Building" class="w-full h-full object-cover">
         <div class="absolute inset-0 bg-linear-to-b from-transparent to-[#1c1d1a]"></div>
       </div>
 
-      <div class="relative z-10 max-w-7xl mx-auto">
+      <div class="relative z-10 max-w-[1700px] mx-auto px-6 md:px-8 lg:px-12">
         <!-- Links Grid -->
         <div class="grid grid-cols-1 md:grid-cols-4 gap-10 text-[15px] text-[#cccccc] leading-relaxed mb-16">
           <!-- Column 1: Address -->
@@ -70,11 +70,11 @@ const mapLink = "https://maps.app.goo.gl/bpam6Qfk66JSzRA4A"
     </div>
 
     <!-- Bottom Tier (Red Section) -->
-    <div class="bg-loyola-red pt-10 pb-10 px-6">
-      <div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-8 items-center md:items-start">
+    <div class="bg-loyola-red pt-10 pb-10">
+      <div class="max-w-[1700px] mx-auto px-6 md:px-8 lg:px-12 flex flex-col md:flex-row gap-8 items-center md:items-start">
         <!-- Bottom Logo -->
         <div class="shrink-0 pt-1 flex justify-center w-full md:w-auto mb-2 md:mb-0">
-          <img src="~/assets/img/logo-loyola.png" alt="Loyola University" class="h-12 md:h-14 w-auto object-contain">
+          <img src="~/assets/img/kekl-white.png" alt="Loyola University" class="h-16 md:h-24 w-auto object-contain">
         </div>
 
         <!-- Bottom Links -->

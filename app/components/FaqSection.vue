@@ -1,22 +1,80 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-import { faqData } from '~/data/faq'
+import { ref, computed, watch } from 'vue'
 
-const expandedItems = ref<boolean[]>(new Array(faqData.length).fill(false))
+const config = useRuntimeConfig()
+console.log('Fetching FAQ from:', config.public.spreadsheetApi)
+const { data: rawData, pending, error } = await useFetch<any[]>(config.public.spreadsheetApi as string)
 
-const allExpanded = computed(() => expandedItems.value.length > 0 && expandedItems.value.every(item => item === true))
-const allCollapsed = computed(() => expandedItems.value.every(item => item === false))
+if (error.value) {
+  console.error('FAQ Fetch Error:', error.value)
+}
+
+const faqData = computed(() => {
+  let data: any = rawData.value
+
+  // Safely handle string responses
+  if (typeof data === 'string') {
+    try {
+      // Clean up potential Google Script garbage (often there's a prefix)
+      const cleaned = data.trim();
+      data = JSON.parse(cleaned)
+    } catch (e) {
+      if (data.includes('<html') || data.includes('<!DOCTYPE html>')) {
+        console.error('API returned HTML instead of JSON. Check GAS permissions.')
+      } else {
+        console.error('Failed to parse FAQ response:', e)
+      }
+      return []
+    }
+  }
+
+  // Handle common wrappers like { "data": [...] } or { "records": [...] }
+  if (data && !Array.isArray(data)) {
+    if (Array.isArray(data.data)) data = data.data
+    else if (Array.isArray(data.records)) data = data.records
+    else if (Array.isArray(data.items)) data = data.items
+  }
+
+  // Final check
+  if (!Array.isArray(data)) {
+    console.error('Resolved data is not an array:', typeof data)
+    return []
+  }
+  
+  // Sort and map
+  return [...data]
+    .filter(item => item && (item.Question || item.Answer || item.question || item.answer))
+    .sort((a, b) => {
+      const noA = Number(a.No || a.no || 0)
+      const noB = Number(b.No || b.no || 0)
+      return noA - noB
+    })
+    .map(item => ({
+      question: item.Question || item.question || '',
+      answer: item.Answer || item.answer || ''
+    }))
+})
+
+const expandedItems = ref<boolean[]>([])
+
+// Watch faqData to reset expandedItems when data arrives
+watch(faqData, (newData) => {
+  expandedItems.value = new Array(newData.length).fill(false)
+}, { immediate: true })
+
+const allExpanded = computed(() => faqData.value.length > 0 && expandedItems.value.length === faqData.value.length && expandedItems.value.every(item => item === true))
+const allCollapsed = computed(() => expandedItems.value.length === faqData.value.length && expandedItems.value.every(item => item === false))
 
 const toggleItem = (index: number) => {
   expandedItems.value[index] = !expandedItems.value[index]
 }
 
 const expandAll = () => {
-  expandedItems.value = new Array(faqData.length).fill(true)
+  expandedItems.value = new Array(faqData.value.length).fill(true)
 }
 
 const collapseAll = () => {
-  expandedItems.value = new Array(faqData.length).fill(false)
+  expandedItems.value = new Array(faqData.value.length).fill(false)
 }
 </script>
 
@@ -32,23 +90,37 @@ const collapseAll = () => {
         <button 
           @click="expandAll" 
           :disabled="allExpanded"
-          class="border px-4 py-2 text-sm font-medium transition-colors focus:outline-hidden"
+          class="border px-4 py-2 text-sm font-medium transition-colors focus:outline-hidden flex items-center gap-2"
           :class="allExpanded ? 'border-gray-300 text-gray-400 bg-gray-50 cursor-not-allowed' : 'border-loyola-red text-loyola-red hover:bg-loyola-red/5 cursor-pointer'"
         >
-          Expand all +
+          Expand all
+          <Icon name="lucide:plus" class="w-4 h-4" />
         </button>
         <button 
           @click="collapseAll" 
           :disabled="allCollapsed"
-          class="border px-4 py-2 text-sm font-medium transition-colors focus:outline-hidden"
+          class="border px-4 py-2 text-sm font-medium transition-colors focus:outline-hidden flex items-center gap-2"
           :class="allCollapsed ? 'border-gray-300 text-gray-400 bg-gray-50 cursor-not-allowed' : 'border-gray-400 text-gray-600 hover:bg-gray-100 cursor-pointer hover:border-gray-500 hover:text-gray-900'"
         >
-          Collapse all −
+          Collapse all
+          <Icon name="lucide:minus" class="w-4 h-4" />
         </button>
       </div>
 
+      <!-- Loading State -->
+      <div v-if="pending" class="py-20 text-center">
+        <Icon name="lucide:loader-2" class="h-8 w-8 animate-spin text-loyola-red mb-4" />
+        <p class="text-gray-500 font-medium">Memuat Frequently Asked Questions...</p>
+      </div>
+
+      <!-- Error State -->
+      <div v-else-if="error" class="py-20 text-center text-red-500">
+        <p class="font-bold mb-2">Gagal memuat FAQ</p>
+        <p class="text-sm">Silakan coba lagi nanti atau hubungi administrator.</p>
+      </div>
+
       <!-- FAQ Accordion List -->
-      <div class="border-t border-gray-400">
+      <div v-else class="border-t border-gray-400">
         <div 
           v-for="(faq, index) in faqData" 
           :key="index"
@@ -70,9 +142,9 @@ const collapseAll = () => {
             >
               {{ faq.question }}
             </span>
-            <span class="text-loyola-red text-xl md:text-2xl font-bold leading-none shrink-0 group-hover/btn:scale-110 transition-transform">
-              {{ expandedItems[index] ? '−' : '+' }}
-            </span>
+            <div class="text-loyola-red text-xl md:text-2xl font-bold leading-none shrink-0 group-hover/btn:scale-110 transition-transform flex items-center justify-center">
+              <Icon :name="expandedItems[index] ? 'lucide:minus' : 'lucide:plus'" class="w-6 h-6 md:w-7 md:h-7" />
+            </div>
           </button>
           
           <div 
@@ -81,6 +153,11 @@ const collapseAll = () => {
           >
             {{ faq.answer }}
           </div>
+        </div>
+
+        <!-- Empty State -->
+        <div v-if="faqData.length === 0" class="py-10 text-center text-gray-500">
+          Belum ada pertanyaan yang tersedia.
         </div>
       </div>
     </div>

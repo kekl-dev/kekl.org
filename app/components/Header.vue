@@ -5,12 +5,11 @@ const isScrolled = ref(false)
 const isMobileMenuOpen = ref(false)
 
 const menuItems = [
-  { label: 'Events' },
-  { label: 'Reading & Resources' },
-  { label: 'Programs & Perks' },
-  { label: 'Communities' },
-  { label: 'Volunteer' },
-  { label: 'About' }
+  { label: 'Events', link: '#' },
+  { label: 'Story', link: '#' },
+  { label: 'Programs', link: '#programs' },
+  { label: 'Merchandise', link: '#' },
+  { label: 'Volunteer', link: '#' }
 ]
 
 const handleScroll = () => {
@@ -30,69 +29,54 @@ onUnmounted(() => {
   <div>
     <!-- Main Header -->
     <header 
-      class="w-full fixed top-0 z-50 border-b transition-all duration-300"
-      :class="isScrolled ? 'bg-[#111111] border-white/10' : 'bg-[#111111cc]/20 backdrop-blur-lg border-white/5'"
+      class="w-full fixed top-0 z-50 transition-all duration-300 overflow-x-clip"
+      :class="isScrolled ? 'bg-loyola-blue border-b border-white/10' : 'bg-loyola-blue lg:bg-[#111111cc]/20 lg:backdrop-blur-lg border-b border-white/5'"
     >
       <div class="max-w-[1700px] mx-auto">
         
         <!-- Top Utility Bar (Mobile Only) -->
-        <div class="lg:hidden flex justify-end items-center gap-6 px-6 py-2 border-b border-white/10 text-[13px] font-bold text-white/90">
+        <div class="lg:hidden flex justify-end items-center gap-6 px-6 py-2 border-b border-white/10 bg-loyola-blue/90 text-[13px] font-bold text-white">
           <a href="#" class="hover:text-accent-yellow flex items-center gap-1 transition-colors">
-            Alumni Directory <span class="text-[10px] opacity-60">↗</span>
-          </a>
-          <a href="#" class="hover:text-accent-yellow flex items-center gap-1 transition-colors">
-            Email <span class="text-[10px] opacity-60">↗</span>
+            KEKL Directory <Icon name="lucide:arrow-up-right" class="w-2.5 h-2.5 opacity-80" />
           </a>
         </div>
 
-        <div class="flex h-[80px] lg:h-[130px] items-center justify-between px-6 lg:px-12 py-2 lg:py-0">
+        <div class="flex h-[80px] lg:h-[130px] items-center justify-between lg:py-0">
           <!-- Logo Section -->
-          <div class="flex items-center shrink-0 h-full">
-            <img src="~/assets/img/logo-loyola.png" alt="Loyola Alumni" class="h-10 lg:h-20 w-auto object-contain">
+          <div class="flex items-center shrink-0 h-full bg-loyola-blue relative w-[160px] md:w-[220px] lg:w-[290px] pl-6 md:pl-8 lg:pl-12 transition-all duration-300 before:content-[''] before:absolute before:right-full before:top-0 before:bottom-0 before:w-screen before:bg-loyola-blue">
+            <img src="~/assets/img/kekl-white.png" alt="Loyola Alumni" class="h-16 lg:h-24 w-auto object-contain relative z-10">
           </div>
 
           <!-- Mobile Action Buttons -->
-          <div class="flex lg:hidden items-center gap-2 sm:gap-3">
-            <button class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-loyola-red hover:border-loyola-red transition-colors focus:outline-hidden">
-               <Icon name="lucide:search" class="w-4 h-4 sm:w-5 sm:h-5" />
-            </button>
-            <button @click="isMobileMenuOpen = true" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-loyola-red hover:border-loyola-red transition-colors focus:outline-hidden">
+          <div class="flex lg:hidden items-center gap-2 sm:gap-3 pr-6">
+            <button @click="isMobileMenuOpen = true" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-loyola-blue hover:border-loyola-blue transition-colors focus:outline-hidden cursor-pointer">
                <Icon name="lucide:menu" class="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
-            <button class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-loyola-red hover:border-loyola-red transition-colors focus:outline-hidden">
+            <button class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-loyola-blue hover:border-loyola-blue transition-colors focus:outline-hidden cursor-pointer">
                <Icon name="lucide:user" class="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
           </div>
 
           <!-- Desktop Right Content Section: Utility Top + Nav Bottom -->
-          <div class="hidden lg:flex flex-1 flex-col justify-center gap-0 md:gap-6 h-full">
+          <div class="hidden lg:flex flex-1 flex-col justify-center gap-0 md:gap-6 h-full pr-12">
             <!-- Top Utility Bar -->
             <div class="flex justify-end items-center gap-10 text-[14px] font-bold text-white/80">
               <a href="#" class="hover:text-accent-yellow flex items-center gap-1 transition-colors">
-                Alumni Directory <span class="text-[11px] opacity-60">↗</span>
-              </a>
-              <a href="#" class="hover:text-accent-yellow flex items-center gap-1 transition-colors">
-                Email <span class="text-[11px] opacity-60">↗</span>
+                KEKL Directory <Icon name="lucide:arrow-up-right" class="w-3 h-3 opacity-60" />
               </a>
               <a href="#" class="hover:text-accent-yellow transition-colors">Log in</a>
-              <button class="flex items-center gap-3 px-6 py-2 rounded-full border border-white/20 hover:border-accent-yellow/40 bg-white/5 hover:bg-white/10 transition-all text-white group">
-                <span class="font-bold group-hover:text-accent-yellow">Search</span>
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 group-hover:text-accent-yellow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                </svg>
-              </button>
             </div>
 
             <!-- Main Navigation Bar -->
-            <nav class="flex items-center justify-end gap-5 text-[16px] font-bold text-white/95">
-              <button 
+            <nav class="flex items-center justify-end gap-7 text-[16px] font-bold text-white/95">
+              <a 
                 v-for="(item, index) in menuItems" 
                 :key="index"
-                class="flex items-center gap-1 hover:text-accent-yellow transition-colors group whitespace-nowrap"
+                :href="item.link"
+                class="flex items-center gap-1 hover:text-accent-yellow transition-colors group whitespace-nowrap cursor-pointer px-1 py-2"
               >
                 {{ item.label }}
-                <svg class="w-4 h-4 text-white/30 group-hover:text-accent-yellow/60 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" /></svg>
-              </button>
+              </a>
             </nav>
           </div>
         </div>
@@ -116,7 +100,7 @@ onUnmounted(() => {
         <div class="flex items-center justify-between px-6 py-4 border-b border-gray-200">
           <div class="w-8"></div> <!-- Spacer for centering title -->
           <h2 class="text-xl font-sans text-gray-800">Menu</h2>
-          <button @click="isMobileMenuOpen = false" class="text-loyola-red hover:text-red-800 focus:outline-hidden transition-colors">
+          <button @click="isMobileMenuOpen = false" class="text-loyola-red hover:text-red-800 focus:outline-hidden transition-colors cursor-pointer">
             <Icon name="lucide:x" class="w-7 h-7" stroke-width="2.5" />
           </button>
         </div>
@@ -124,12 +108,16 @@ onUnmounted(() => {
         <!-- Mobile Menu Items -->
         <nav class="flex flex-col">
           <div v-for="(item, index) in menuItems" :key="index" class="border-b border-gray-200">
-            <button class="w-full flex items-center justify-between px-6 py-5 text-left text-[17px] font-bold font-sans text-[#1a1a1a] group focus:outline-hidden hover:bg-gray-50 transition-colors">
+            <a 
+              :href="item.link"
+              @click="isMobileMenuOpen = false"
+              class="w-full flex items-center justify-between px-6 py-5 text-left text-[17px] font-bold font-sans text-[#1a1a1a] group focus:outline-hidden hover:bg-gray-50 transition-colors"
+            >
               {{ item.label }}
               <div class="shrink-0 w-8 h-8 rounded-full bg-loyola-red text-white flex items-center justify-center group-hover:scale-110 transition-transform shadow-xs">
-                <Icon name="lucide:chevron-down" class="w-5 h-5" stroke-width="2.5" />
+                <Icon name="lucide:chevron-right" class="w-5 h-5" stroke-width="2.5" />
               </div>
-            </button>
+            </a>
           </div>
         </nav>
       </div>

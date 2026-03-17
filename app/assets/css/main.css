@@ -6,7 +6,7 @@
   /* Brand Palette from User */
   --color-loyola-red: #8c1515;
   --color-accent-yellow: #fbff35;
-  --color-loyola-blue: #012496;
+  --color-loyola-blue: #264799;
   
   /* Semantic Mappings */
   --color-primary: var(--color-loyola-red);
@@ -23,7 +23,7 @@
 
   /* Fonts */
   --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  --font-serif: "Sans Serif", ui-serif, Georgia, serif;
 
   /* Spacing / Sizes */
   --header-height: 110px;
@@ -42,7 +42,15 @@
 
   /* Selection style */
   ::selection {
-    background-color: var(--color-Loyola-red);
-    color: white;
+    background-color: transparent;
+    color: red;
   }
+}
+
+.highlight {
+  display: inline;
+  background-image: linear-gradient(120deg, var(--color-accent-yellow) 0%, var(--color-accent-yellow) 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0.3em;
+  background-position: 0 95%;
 }

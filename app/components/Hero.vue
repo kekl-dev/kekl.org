@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <section class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-32 md:pt-60">
+  <section class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-32 md:pt-52">
     <!-- Background Image with Overlay -->
     <div class="absolute inset-0 z-0">
       <img src="~/assets/img/hero-img.png" alt="Loyola Alumni" class="w-full h-full object-cover">
@@ -12,23 +12,23 @@
 
     <!-- Centered Content -->
     <div class="relative z-10 max-w-5xl px-8 text-center text-white flex-1 flex flex-col justify-center">
-      <p class="text-md md:text-xl font-medium mb-6 animate-fade-in tracking-widest text-accent-yellow drop-shadow-sm uppercase">
-        Loyola Alumni Directory
+      <p class="w-fit mx-auto px-5 py-2 border border-white/20 rounded-full bg-white/10 backdrop-blur-md text-xs md:text-sm font-medium mb-8 animate-fade-in tracking-widest text-accent-yellow drop-shadow-sm uppercase">
+        LOYOLA COLLEGE ALUMNI DIRECTORY
       </p>
       
       <h1 class="text-5xl md:text-7xl font-serif font-black mb-8 md:mb-10 leading-[1.05] animate-slide-up tracking-tight">
         Who Will<br> 
-        <span class="text-white italic relative inline-block">
+        <span class="text-white relative inline-block">
           You Discover?
         </span>
       </h1>
 
       <p class="text-[15px] md:text-xl font-medium max-w-2xl mx-auto mb-12 md:mb-16 text-white/90 leading-relaxed drop-shadow-md px-4 md:px-0">
-        Connect with your Loyola Alumni community. Explore your official destination for finding alumni of Loyola.
+        Find and connect with fellow KEKL. Explore any potential collaboration with other alumni within the same value.
       </p>
 
       <!-- Action Links -->
-      <div class="flex flex-wrap items-center justify-center gap-x-16 gap-y-8 text-[16px] font-bold">
+      <div class="flex flex-wrap items-center justify-center gap-x-16 gap-y-8 text-[16px] font-bold mb-10">
         <!-- Visit the Directory -->
         <a href="#" class="group flex items-center gap-4 hover:text-accent-yellow transition-all duration-300">
           <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-accent-yellow group-hover:text-black transition-all border border-white/20 shadow-lg group-hover:scale-110">
@@ -67,10 +67,16 @@
       </div>
     </div>
 
+    <div class="relative w-full text-center text-sm font-semibold text-white/60">
+      <p>
+        CONNECT • SHARE • COLLABORATE
+      </p>
+    </div>
+
     <!-- Bottom Attribution Bar -->
-    <div class="relative w-full py-10 text-center text-sm font-semibold text-white/60">
-      <div class="max-w-5xl mx-auto px-8">
-        The Alumni Directory is available to those who have completed a minimum of three quarters of a degree-granting program at Loyola.
+    <div class="relative w-full py-5 text-center text-sm font-light text-white/60">
+      <div class="max-w-4xl mx-auto px-8">
+        Access to the KEKL Alumni Directory is restricted to registered members. A preliminary KYC verification will be carried out to confirm member authenticity.
       </div>
     </div>
   </section>

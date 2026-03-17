@@ -1,8 +1,8 @@
 <script setup lang="ts">
 const benefits = [
   {
-    title: 'Mobile-Friendly Experience',
-    description: 'Network, reconnect, and reminisce from anywhere with powerful search and filters in the mobile-friendly Directory.',
+    title: 'Any Platform. Anytime. Anywhere',
+    description: `Reconnect, build new relationships, and relive your best moments with ease, whether you're browsing on your phone, tablet, or desktop. Enjoy a smooth, intuitive experience designed to keep you connected wherever life takes you.`,
     image: 'https://img.buzzfeed.com/buzzfeed-static/static/2024-06/1/15/asset/bb36008c8025/sub-buzz-8947-1717257505-1.jpg'
   },
   {
@@ -19,13 +19,13 @@ const benefits = [
 </script>
 
 <template>
-  <section class="bg-[#f9f9f9] py-24 px-8 overflow-hidden">
+  <section class="bg-white py-24 px-8 overflow-hidden">
     <div class="max-w-6xl mx-auto text-center">
       <!-- Heading Section -->
       <div class="max-w-4xl mx-auto space-y-4 md:space-y-8 mb-12 md:mb-20 animate-fade-in">
         <h2 class="text-3xl md:text-5xl font-serif font-black text-[#2d2d2d] leading-tight tracking-tight">
-          Your Alumni Community<br>
-          Is at Your Fingertips
+          Keluarga Eks Kolese Loyola<br>
+          At Your <span class="highlight">Fingertips</span>
         </h2>
         
         <p class="text-[15px] md:text-[16px] text-[#4a4a4a] leading-relaxed font-medium px-4 md:px-0">
