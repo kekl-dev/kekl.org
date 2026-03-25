@@ -22,7 +22,7 @@ const programs = [
 </script>
 
 <template>
-  <section id="programs" class="bg-[#f9f9f9] py-24 px-8 pt-36">
+  <section id="programs" class="bg-[#f9f9f9] pb-12 pt-10 px-8">
     <div class="max-w-6xl mx-auto">
       <!-- Heading Section -->
       <div class="max-w-4xl mx-auto text-center mb-16 md:mb-24 animate-fade-in">

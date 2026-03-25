@@ -70,7 +70,7 @@ const mapLink = "https://maps.app.goo.gl/bpam6Qfk66JSzRA4A"
     </div>
 
     <!-- Bottom Tier (Red Section) -->
-    <div class="bg-loyola-red pt-10 pb-10">
+    <div class="bg-loyola-blue pt-10 pb-10">
       <div class="max-w-[1700px] mx-auto px-6 md:px-8 lg:px-12 flex flex-col md:flex-row gap-8 items-center md:items-start">
         <!-- Bottom Logo -->
         <div class="shrink-0 pt-1 flex justify-center w-full md:w-auto mb-2 md:mb-0">

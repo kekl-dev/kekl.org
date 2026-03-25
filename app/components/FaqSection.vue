@@ -79,7 +79,7 @@ const collapseAll = () => {
 </script>
 
 <template>
-  <section id="faq" class="bg-[#f9f9f9] pt-40 pb-20 px-8">
+  <section id="faq" class="bg-[#f9f9f9] pb-20 pt-10 px-8">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-3xl md:text-5xl font-serif font-black text-[#1a1a1a] mb-8 md:mb-10 text-center md:text-left">
         Frequently Asked Questions

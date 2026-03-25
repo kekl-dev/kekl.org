@@ -29,8 +29,8 @@ onUnmounted(() => {
   <div>
     <!-- Main Header -->
     <header 
-      class="w-full fixed top-0 z-50 transition-all duration-300 overflow-x-clip"
-      :class="isScrolled ? 'bg-loyola-blue border-b border-white/10' : 'bg-loyola-blue lg:bg-[#111111cc]/20 lg:backdrop-blur-lg border-b border-white/5'"
+      class="w-full transition-all duration-300 overflow-x-clip"
+      :class="'bg-loyola-blue border-b border-white/10'"
     >
       <div class="max-w-[1700px] mx-auto">
         

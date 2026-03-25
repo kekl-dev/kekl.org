@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <section class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-32 md:pt-52">
+  <section class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
     <!-- Background Image with Overlay -->
     <div class="absolute inset-0 z-0">
       <img src="~/assets/img/hero-img.png" alt="Loyola Alumni" class="w-full h-full object-cover">
@@ -11,15 +11,15 @@
     </div>
 
     <!-- Centered Content -->
-    <div class="relative z-10 max-w-5xl px-8 text-center text-white flex-1 flex flex-col justify-center">
+    <div class="relative z-10 max-w-5xl px-8 text-center text-white flex-1 flex flex-col justify-center mb-10 ">
       <p class="w-fit mx-auto px-5 py-2 border border-white/20 rounded-full bg-white/10 backdrop-blur-md text-xs md:text-sm font-medium mb-8 animate-fade-in tracking-widest text-accent-yellow drop-shadow-sm uppercase">
         LOYOLA COLLEGE ALUMNI DIRECTORY
       </p>
       
       <h1 class="text-5xl md:text-7xl font-serif font-black mb-8 md:mb-10 leading-[1.05] animate-slide-up tracking-tight">
-        Who Will<br> 
+        Men & Women<br> 
         <span class="text-white relative inline-block">
-          You Discover?
+          for Others
         </span>
       </h1>
 
@@ -28,7 +28,7 @@
       </p>
 
       <!-- Action Links -->
-      <div class="flex flex-wrap items-center justify-center gap-x-16 gap-y-8 text-[16px] font-bold mb-10">
+      <div class="flex flex-wrap items-center justify-center gap-x-16 gap-y-8 text-[16px] font-bold">
         <!-- Visit the Directory -->
         <a href="#" class="group flex items-center gap-4 hover:text-accent-yellow transition-all duration-300">
           <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-accent-yellow group-hover:text-black transition-all border border-white/20 shadow-lg group-hover:scale-110">
