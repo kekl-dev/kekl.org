@@ -35,6 +35,17 @@ const toggleCaption = (id: number) => {
 }
 
 const isCaptionExpanded = (id: number) => expandedCaptions.value.has(id)
+
+const formatCaption = (text: string) => {
+  if (!text) return ''
+  // Basic XSS protection: escape < and >
+  const escaped = text.replace(/</g, '&lt;').replace(/>/g, '&gt;')
+  // Highlight hashtags (#tag) and mentions (@user)
+  return escaped.replace(/((?:#|@)\w+)/g, (match) => {
+    const className = match.startsWith('#') ? 'hashtag' : 'mention'
+    return `<span class="${className}">${match}</span>`
+  })
+}
 </script>
 
 <template>
@@ -106,12 +117,12 @@ const isCaptionExpanded = (id: number) => expandedCaptions.value.has(id)
             <div class="p-4 pt-4">
               <p 
                 class="text-[14px] text-gray-800 leading-normal transition-all duration-300"
-                :class="isCaptionExpanded(post.id) ? 'whitespace-pre-wrap' : 'line-clamp-2'"
+                :class="isCaptionExpanded(post.id) ? 'whitespace-pre-wrap' : ''"
+                v-html="formatCaption(isCaptionExpanded(post.id) ? post.caption : (post.caption.length > 250 ? post.caption.slice(0, 250) + '...' : post.caption))"
               >
-                {{ post.caption }}
               </p>
               <button 
-                v-if="post.caption.length > 80"
+                v-if="post.caption.length > 250"
                 @click="toggleCaption(post.id)"
                 class="mt-1 text-[12px] font-bold text-loyola-red hover:text-loyola-red/80 transition-colors uppercase tracking-tight cursor-pointer"
               >
@@ -142,11 +153,9 @@ const isCaptionExpanded = (id: number) => expandedCaptions.value.has(id)
 </template>
 
 <style scoped>
-.line-clamp-2 {
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+:deep(.hashtag),
+:deep(.mention) {
+  color: #405DE6;
+  font-weight: 500;
 }
 </style>
