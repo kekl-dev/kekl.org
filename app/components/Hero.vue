@@ -5,7 +5,7 @@
   <section class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
     <!-- Background Image with Overlay -->
     <div class="absolute inset-0 z-0">
-      <img src="~/assets/img/hero-img.png" alt="Loyola Alumni" class="w-full h-full object-cover">
+      <img src="~/assets/img/KEKL-collage-hero.png" alt="Loyola Alumni" class="w-full h-full object-cover">
       <!-- Dark gradient overlay for premium look -->
       <div class="absolute inset-0 bg-linear-to-b from-black/70 via-black/40 to-black/90"></div>
     </div>
@@ -16,7 +16,7 @@
         LOYOLA COLLEGE ALUMNI DIRECTORY
       </p>
       
-      <h1 class="text-5xl md:text-7xl font-serif font-black mb-8 md:mb-10 leading-[1.05] animate-slide-up tracking-tight">
+      <h1 class="text-5xl md:text-7xl font-sans font-black mb-8 md:mb-10 leading-[1.05] animate-slide-up tracking-tight">
         Men & Women<br> 
         <span class="text-white relative inline-block">
           for Others

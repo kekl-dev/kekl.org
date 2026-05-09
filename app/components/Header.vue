@@ -30,12 +30,12 @@ onUnmounted(() => {
     <!-- Main Header -->
     <header 
       class="w-full transition-all duration-300 overflow-x-clip"
-      :class="'bg-loyola-blue border-b border-white/10'"
+      :class="'bg-loyola-red border-b border-white/10'"
     >
       <div class="max-w-[1700px] mx-auto">
         
         <!-- Top Utility Bar (Mobile Only) -->
-        <div class="lg:hidden flex justify-end items-center gap-6 px-6 py-2 border-b border-white/10 bg-loyola-blue/90 text-[13px] font-bold text-white">
+        <div class="lg:hidden flex justify-end items-center gap-6 px-6 py-2 border-b border-white/10 bg-loyola-red/90 text-[13px] font-bold text-white">
           <a href="#" class="hover:text-accent-yellow flex items-center gap-1 transition-colors">
             KEKL Directory <Icon name="lucide:arrow-up-right" class="w-2.5 h-2.5 opacity-80" />
           </a>
@@ -43,16 +43,16 @@ onUnmounted(() => {
 
         <div class="flex h-[80px] lg:h-[130px] items-center justify-between lg:py-0">
           <!-- Logo Section -->
-          <div class="flex items-center shrink-0 h-full bg-loyola-blue relative w-[160px] md:w-[220px] lg:w-[290px] pl-6 md:pl-8 lg:pl-12 transition-all duration-300 before:content-[''] before:absolute before:right-full before:top-0 before:bottom-0 before:w-screen before:bg-loyola-blue">
+          <div class="flex items-center shrink-0 h-full bg-loyola-red relative w-[160px] md:w-[220px] lg:w-[290px] pl-6 md:pl-8 lg:pl-12 transition-all duration-300 before:content-[''] before:absolute before:right-full before:top-0 before:bottom-0 before:w-screen before:bg-loyola-red">
             <img src="~/assets/img/kekl-white.png" alt="Loyola Alumni" class="h-16 lg:h-24 w-auto object-contain relative z-10">
           </div>
 
           <!-- Mobile Action Buttons -->
           <div class="flex lg:hidden items-center gap-2 sm:gap-3 pr-6">
-            <button @click="isMobileMenuOpen = true" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-loyola-blue hover:border-loyola-blue transition-colors focus:outline-hidden cursor-pointer">
+            <button @click="isMobileMenuOpen = true" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-loyola-red hover:border-loyola-red transition-colors focus:outline-hidden cursor-pointer">
                <Icon name="lucide:menu" class="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
-            <button class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-loyola-blue hover:border-loyola-blue transition-colors focus:outline-hidden cursor-pointer">
+            <button class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-white/30 flex items-center justify-center text-white hover:bg-loyola-red hover:border-loyola-red transition-colors focus:outline-hidden cursor-pointer">
                <Icon name="lucide:user" class="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
           </div>

@@ -5,49 +5,49 @@ const mapLink = "https://maps.app.goo.gl/bpam6Qfk66JSzRA4A"
 <template>
   <footer class="text-white w-full">
     <!-- Top Tier (Dark Section with Background) -->
-    <div class="relative bg-[#1c1d1a] pt-16 pb-[100px] overflow-hidden">
+    <div class="relative bg-[#0b0b0b] pt-20 pb-20 md:pb-24 overflow-hidden">
       <!-- Background Image Overlay (Subtle) -->
-      <div class="absolute inset-0 z-0 opacity-20 mix-blend-luminosity">
+      <div class="absolute inset-0 z-0 opacity-15 mix-blend-luminosity">
         <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=2000&auto=format&fit=crop" alt="Campus Building" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-linear-to-b from-transparent to-[#1c1d1a]"></div>
+        <div class="absolute inset-0 bg-linear-to-b from-transparent to-[#0b0b0b]"></div>
       </div>
 
-      <div class="relative z-10 max-w-[1700px] mx-auto px-6 md:px-8 lg:px-12">
+      <div class="relative z-10 max-w-[1240px] mx-auto px-6 md:px-10">
         <!-- Links Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-10 text-[15px] text-[#cccccc] leading-relaxed mb-16">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-12 text-[14px] text-white/70 leading-relaxed mb-12 md:mb-14">
           <!-- Column 1: Address -->
           <div class="space-y-1">
-            <p class="font-bold text-white">Loyola High School</p>
+            <p class="font-black text-white text-[16px]">Loyola High School</p>
             <p>Karang Anyar Street No.37</p>
             <p>Semarang, Central Java 50135</p>
-            <a :href="mapLink" class="inline-flex items-center gap-1 text-white hover:text-loyola-red transition-colors font-bold mt-2 text-[14px]">
+            <a :href="mapLink" class="inline-flex items-center gap-2 text-white hover:text-loyola-red transition-colors font-black mt-3 text-[13px] tracking-[0.14em] uppercase">
               Map 
               <span class="text-loyola-red text-[11px] font-black">↗</span>
             </a>
           </div>
 
           <!-- Column 2 -->
-          <ul class="space-y-4 font-bold text-white">
-            <li><a href="#" class="hover:underline text-[15px]">Get to Know SKL</a></li>
-            <li><a href="#" class="hover:underline text-[15px]">LOYOLA Magazine</a></li>
-            <li><a href="#" class="hover:underline text-[15px]">Contact SKL</a></li>
-            <li><a href="#" class="hover:underline text-[15px]">Help</a></li>
+          <ul class="space-y-4 font-black text-white">
+            <li><a href="#" class="hover:text-loyola-red transition-colors text-[14px]">Get to Know SKL</a></li>
+            <li><a href="#" class="hover:text-loyola-red transition-colors text-[14px]">LOYOLA Magazine</a></li>
+            <li><a href="#" class="hover:text-loyola-red transition-colors text-[14px]">Contact SKL</a></li>
+            <li><a href="#" class="hover:text-loyola-red transition-colors text-[14px]">Help</a></li>
           </ul>
 
           <!-- Column 3 -->
           <ul class="space-y-4 text-white">
-            <li><a href="#" class="hover:underline text-[15px]">Access SKL Member Card</a></li>
-            <li><a href="#" class="hover:underline text-[15px]">Check your alumni email</a></li>
-            <li><a href="#" class="hover:underline text-[15px]">My Alumni Account</a></li>
-            <li><a href="#" class="hover:underline text-[15px]">Give to Loyola</a></li>
+            <li><a href="#" class="hover:text-loyola-red transition-colors text-[14px]">Access SKL Member Card</a></li>
+            <li><a href="#" class="hover:text-loyola-red transition-colors text-[14px]">Check your alumni email</a></li>
+            <li><a href="#" class="hover:text-loyola-red transition-colors text-[14px]">My Alumni Account</a></li>
+            <li><a href="#" class="hover:text-loyola-red transition-colors text-[14px]">Give to Loyola</a></li>
           </ul>
 
           <!-- Column 4 -->
-          <ul class="space-y-4 text-[#cccccc]">
-            <li><a href="#" class="hover:underline text-[15px]">Accessibility</a></li>
-            <li><a href="#" class="hover:underline text-[15px]">Privacy Policy</a></li>
-            <li><a href="#" class="hover:underline text-[15px]">Terms of Use</a></li>
-            <li><a href="#" class="hover:underline text-[15px]">Code of Conduct</a></li>
+          <ul class="space-y-4 text-white/70">
+            <li><a href="#" class="hover:text-white transition-colors text-[14px]">Accessibility</a></li>
+            <li><a href="#" class="hover:text-white transition-colors text-[14px]">Privacy Policy</a></li>
+            <li><a href="#" class="hover:text-white transition-colors text-[14px]">Terms of Use</a></li>
+            <li><a href="#" class="hover:text-white transition-colors text-[14px]">Code of Conduct</a></li>
           </ul>
         </div>
 
@@ -70,8 +70,8 @@ const mapLink = "https://maps.app.goo.gl/bpam6Qfk66JSzRA4A"
     </div>
 
     <!-- Bottom Tier (Red Section) -->
-    <div class="bg-loyola-blue pt-10 pb-10">
-      <div class="max-w-[1700px] mx-auto px-6 md:px-8 lg:px-12 flex flex-col md:flex-row gap-8 items-center md:items-start">
+    <div class="bg-loyola-red py-10 md:py-12">
+      <div class="max-w-[1240px] mx-auto px-6 md:px-10 flex flex-col md:flex-row gap-8 items-center md:items-start">
         <!-- Bottom Logo -->
         <div class="shrink-0 pt-1 flex justify-center w-full md:w-auto mb-2 md:mb-0">
           <img src="~/assets/img/kekl-white.png" alt="Loyola University" class="h-16 md:h-24 w-auto object-contain">
@@ -80,28 +80,28 @@ const mapLink = "https://maps.app.goo.gl/bpam6Qfk66JSzRA4A"
         <!-- Bottom Links -->
         <div class="flex-1 w-full flex flex-col items-center md:items-start md:pl-10">
           <!-- Content Container: Columns on Mobile, Rows on Desktop -->
-          <div class="flex flex-row md:flex-col justify-center md:justify-start gap-x-8 sm:gap-x-16 md:gap-y-3 mb-8 md:mb-6 w-full md:w-auto max-w-[400px] md:max-w-none">
+          <div class="flex flex-row md:flex-col justify-center md:justify-start gap-x-8 sm:gap-x-16 md:gap-y-3 mb-8 md:mb-6 w-full md:w-auto max-w-[420px] md:max-w-none">
             <!-- Group 1: Left Col (Mobile) / Row 1 (Desktop) -->
-            <ul class="flex flex-col md:flex-row text-left gap-y-4 md:gap-x-6 lg:gap-x-8 font-bold text-[14px] md:text-[15px] text-white">
-              <li><a href="#" class="hover:underline">Loyola Home</a></li>
-              <li><a href="#" class="hover:underline">Maps & Directions</a></li>
-              <li><a href="#" class="hover:underline">Search Loyola</a></li>
-              <li><a href="#" class="hover:underline">Emergency Info</a></li>
+            <ul class="flex flex-col md:flex-row text-left gap-y-4 md:gap-x-6 lg:gap-x-8 font-black text-[13px] md:text-[14px] text-white tracking-[0.12em] uppercase">
+              <li><a href="#" class="hover:opacity-80">Loyola Home</a></li>
+              <li><a href="#" class="hover:opacity-80">Maps & Directions</a></li>
+              <li><a href="#" class="hover:opacity-80">Search Loyola</a></li>
+              <li><a href="#" class="hover:opacity-80">Emergency Info</a></li>
             </ul>
             
             <!-- Group 2: Right Col (Mobile) / Row 2 (Desktop) -->
-            <ul class="flex flex-col md:flex-row flex-wrap text-left gap-y-4 md:gap-x-5 lg:gap-x-6 font-bold md:font-medium text-[14px] md:text-[13px] lg:text-[14px] text-white md:text-white/90">
-              <li><a href="#" class="hover:underline">Terms of Use</a></li>
-              <li><a href="#" class="hover:underline">Privacy</a></li>
-              <li><a href="#" class="hover:underline">Copyright</a></li>
-              <li><a href="#" class="hover:underline">Trademarks</a></li>
-              <li><a href="#" class="hover:underline">Non-Discrimination</a></li>
-              <li><a href="#" class="hover:underline">Accessibility</a></li>
+            <ul class="flex flex-col md:flex-row flex-wrap text-left gap-y-4 md:gap-x-5 lg:gap-x-6 font-medium text-[13px] text-white/90">
+              <li><a href="#" class="hover:text-white transition-colors">Terms of Use</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Privacy</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Copyright</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Trademarks</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Non-Discrimination</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Accessibility</a></li>
             </ul>
           </div>
 
           <!-- Copyright -->
-          <p class="text-white md:text-white/80 text-[13px] md:text-[13px] text-center md:text-left mt-2 md:mt-0">
+          <p class="text-white/85 text-[13px] text-center md:text-left mt-2 md:mt-0">
             © Loyola High School. Semarang, Central Java 50135.
           </p>
         </div>

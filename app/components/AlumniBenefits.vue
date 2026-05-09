@@ -3,67 +3,93 @@ const benefits = [
   {
     title: 'Any Platform. Anytime. Anywhere',
     description: `Reconnect, build new relationships, and relive your best moments with ease, whether you're browsing on your phone, tablet, or desktop. Enjoy a smooth, intuitive experience designed to keep you connected wherever life takes you.`,
-    image: 'https://img.buzzfeed.com/buzzfeed-static/static/2024-06/1/15/asset/bb36008c8025/sub-buzz-8947-1717257505-1.jpg'
+    image: 'https://img.buzzfeed.com/buzzfeed-static/static/2024-06/1/15/asset/bb36008c8025/sub-buzz-8947-1717257505-1.jpg',
+    icon: 'lucide:monitor-smartphone'
   },
   {
     title: 'Community Connections',
     description: 'Get closer to the communities that matter to you with search fields like community affinity, interests, area of study, location, and class year.',
-    image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=800&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=800&auto=format&fit=crop',
+    icon: 'lucide:users'
   },
   {
     title: 'Career Connections',
     description: 'Open the door for future opportunities by finding others based on industry, company, skills & specialties, job title, and availability to offer career support.',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu1TVnn0S55fsUy0xPk506rK72a38bKAtJVg&s'
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu1TVnn0S55fsUy0xPk506rK72a38bKAtJVg&s',
+    icon: 'lucide:badge-check'
   }
 ]
 </script>
 
 <template>
-  <section class="bg-white py-24 px-8 overflow-hidden">
-    <div class="max-w-6xl mx-auto text-center">
-      <!-- Heading Section -->
-      <div class="max-w-4xl mx-auto space-y-4 md:space-y-8 mb-12 md:mb-20 animate-fade-in">
-        <h2 class="text-3xl md:text-5xl font-serif font-black text-[#2d2d2d] leading-tight tracking-tight">
-          Keluarga Eks Kolese Loyola<br>
-          At Your <span class="highlight">Fingertips</span>
-        </h2>
-        
-        <p class="text-[15px] md:text-[16px] text-[#4a4a4a] leading-relaxed font-medium px-4 md:px-0">
-          The Alumni Directory is the only verified online listing of Loyola alumni. 
-          Whether you're looking to reconnect with a classmate, seek advice, discover alumni with similar interests, or find out if a company is a right fit for you, the Alumni Directory is a helpful resource for alumni and students looking to make personal and professional connections.
-        </p>
+  <section class="bg-[#f2f2f2] py-6 md:py-20 px-6 md:px-20 overflow-hidden">
+    <div class="max-w-[1240px] mx-auto">
+
+      <!-- Heading — right-aligned -->
+      <div class="flex justify-end mb-12 md:mb-16 animate-fade-in">
+        <div class="max-w-[640px] text-right">
+          <p class="inline-flex items-center justify-end gap-2 text-[11px] font-black tracking-[0.25em] uppercase text-loyola-red mb-4">
+            Benefits
+            <span class="h-px w-6 bg-loyola-red inline-block"></span>
+          </p>
+          <h2 class="text-xl md:text-3xl font-sans text-[#111111] leading-tight tracking-tight">
+            Keluarga Eks Kolese Loyola At Your <span class="font-bold text-loyola-red">Fingertips</span>
+          </h2>
+          <p class="text-[14px] md:text-[15px] text-[#5a6373] leading-relaxed font-medium mt-4">
+            The Alumni Directory is the only verified online listing of Loyola alumni.
+            Whether you're looking to reconnect with a classmate, seek advice, or find professional connections.
+          </p>
+        </div>
       </div>
 
-      <!-- Grid Section -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6 mb-12 md:mb-20">
-        <div 
-          v-for="(benefit, index) in benefits" 
+      <!-- 3 Benefit Cards — landscape 4:3 ratio -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div
+          v-for="(benefit, index) in benefits"
           :key="index"
-          class="bg-white rounded-xl overflow-hidden shadow-lg border border-black/5 flex flex-col hover:shadow-2xl transition-all duration-300 animate-slide-up"
+          class="rounded-2xl p-6 flex flex-col gap-4 hover:-translate-y-1 transition-all duration-300 animate-slide-up"
+          :class="index === 0
+            ? 'bg-loyola-red text-white shadow-[0_16px_48px_rgba(140,21,21,0.28)]'
+            : 'bg-white border border-black/6 shadow-[0_8px_24px_rgba(0,0,0,0.06)] hover:shadow-[0_16px_40px_rgba(0,0,0,0.10)]'"
           :style="{ animationDelay: `${(index + 1) * 0.1}s` }"
         >
-          <div class="h-[200px] md:h-[300px] relative overflow-hidden">
-            <img 
-              :src="benefit.image" 
-              :alt="benefit.title" 
-              class="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-            >
+          <!-- Icon -->
+          <div
+            class="w-11 h-11 rounded-xl flex items-center justify-center"
+            :class="index === 0 ? 'bg-white/15' : 'bg-loyola-red/8'"
+          >
+            <Icon
+              :name="benefit.icon"
+              class="w-5 h-5"
+              :class="index === 0 ? 'text-white' : 'text-loyola-red'"
+            />
           </div>
-          <div class="px-5 py-5 md:px-6 md:py-6 flex-1 flex flex-col text-left space-y-2 md:space-y-3">
-            <h3 class="text-xl md:text-xl font-bold text-[#1a1a1a] leading-snug">{{ benefit.title }}</h3>
-            <p class="text-[14px] md:text-[16px] text-[#4a4a4a] leading-relaxed">
+
+          <!-- Text block -->
+          <div>
+            <h3
+              class="text-[20px] font-sans font-bold leading-snug mb-2"
+              :class="index === 0 ? 'text-white' : 'text-[#111111]'"
+            >
+              {{ benefit.title }}
+            </h3>
+            <p
+              class="text-[16px] leading-relaxed line-clamp-4"
+              :class="index === 0 ? 'text-white/75' : 'text-[#5a6373]'"
+            >
               {{ benefit.description }}
             </p>
           </div>
         </div>
       </div>
 
-      <!-- CTA Button -->
-      <div class="animate-slide-up" style="animation-delay: 0.4s">
-        <a href="#" class="inline-block bg-loyola-red text-white px-5 py-5 font-bold text-md hover:bg-loyola-red/90 transition-all rounded shadow-lg hover:shadow-xl hover:-translate-y-1">
+      <!-- CTA -->
+      <!-- <div class="flex justify-center animate-slide-up" style="animation-delay: 0.4s">
+        <a href="#" class="inline-flex items-center gap-2 bg-loyola-red text-white px-10 py-4 font-black text-[11px] hover:bg-loyola-red/90 transition-all rounded-full shadow-[0_8px_28px_rgba(140,21,21,0.30)] hover:shadow-[0_14px_40px_rgba(140,21,21,0.40)] hover:-translate-y-0.5 tracking-[0.22em] uppercase">
           Visit the Directory
+          <Icon name="lucide:arrow-up-right" class="w-4 h-4" />
         </a>
-      </div>
+      </div> -->
     </div>
   </section>
 </template>

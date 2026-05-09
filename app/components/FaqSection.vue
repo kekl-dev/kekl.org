@@ -40,7 +40,7 @@ const faqData = computed(() => {
     console.error('Resolved data is not an array:', typeof data)
     return []
   }
-  
+
   // Sort and map
   return [...data]
     .filter(item => item && (item.Question || item.Answer || item.question || item.answer))
@@ -79,38 +79,54 @@ const collapseAll = () => {
 </script>
 
 <template>
-  <section id="faq" class="bg-[#f9f9f9] pb-20 pt-10 px-8">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-3xl md:text-5xl font-serif font-black text-[#1a1a1a] mb-8 md:mb-10 text-center md:text-left">
-        Frequently Asked Questions
-      </h2>
-      
+  <section id="faq" class="bg-white py-20 md:py-28 px-6 md:px-10">
+    <div class="max-w-[900px] mx-auto">
+
+      <!-- Heading -->
+      <div class="text-center mb-12 md:mb-16">
+        <p class="inline-flex items-center gap-2 text-[11px] font-black tracking-[0.25em] uppercase text-loyola-red mb-4">
+          <span class="h-px w-6 bg-loyola-red inline-block"></span>
+          FAQ
+          <span class="h-px w-6 bg-loyola-red inline-block"></span>
+        </p>
+        <h2 class="text-3xl md:text-5xl font-sans  text-[#111111] leading-tight tracking-tight mt-1">
+          Frequently <span class="font-bold text-loyola-red">Asked Questions</span>
+        </h2>
+        <p class="text-[15px] md:text-[16px] text-[#5a6373] font-medium mt-5">
+          Jawaban cepat untuk pertanyaan yang paling sering ditanyakan.
+        </p>
+      </div>
+
       <!-- Expand / Collapse Controls -->
-      <div class="flex justify-center md:justify-end gap-3 mb-8 md:mb-6">
-        <button 
-          @click="expandAll" 
+      <div class="flex justify-center gap-3 mb-8 md:mb-10">
+        <button
+          @click="expandAll"
           :disabled="allExpanded"
-          class="border px-4 py-2 text-sm font-medium transition-colors focus:outline-hidden flex items-center gap-2"
-          :class="allExpanded ? 'border-gray-300 text-gray-400 bg-gray-50 cursor-not-allowed' : 'border-loyola-red text-loyola-red hover:bg-loyola-red/5 cursor-pointer'"
+          class="border px-5 py-2.5 text-[11px] font-black tracking-[0.18em] uppercase transition-all focus:outline-hidden flex items-center gap-2 rounded-full"
+          :class="allExpanded
+            ? 'border-gray-200 text-gray-400 bg-white cursor-not-allowed'
+            : 'border-loyola-red text-loyola-red bg-white hover:bg-loyola-red hover:text-white cursor-pointer shadow-[0_4px_16px_rgba(140,21,21,0.12)]'"
         >
           Expand all
-          <Icon name="lucide:plus" class="w-4 h-4" />
+          <Icon name="lucide:plus" class="w-3.5 h-3.5" />
         </button>
-        <button 
-          @click="collapseAll" 
+        <button
+          @click="collapseAll"
           :disabled="allCollapsed"
-          class="border px-4 py-2 text-sm font-medium transition-colors focus:outline-hidden flex items-center gap-2"
-          :class="allCollapsed ? 'border-gray-300 text-gray-400 bg-gray-50 cursor-not-allowed' : 'border-gray-400 text-gray-600 hover:bg-gray-100 cursor-pointer hover:border-gray-500 hover:text-gray-900'"
+          class="border px-5 py-2.5 text-[11px] font-black tracking-[0.18em] uppercase transition-all focus:outline-hidden flex items-center gap-2 rounded-full"
+          :class="allCollapsed
+            ? 'border-gray-200 text-gray-400 bg-white cursor-not-allowed'
+            : 'border-black/20 text-[#111111] bg-white hover:bg-black/5 cursor-pointer hover:border-black/30 shadow-[0_4px_16px_rgba(0,0,0,0.06)]'"
         >
           Collapse all
-          <Icon name="lucide:minus" class="w-4 h-4" />
+          <Icon name="lucide:minus" class="w-3.5 h-3.5" />
         </button>
       </div>
 
       <!-- Loading State -->
       <div v-if="pending" class="py-20 text-center">
         <Icon name="lucide:loader-2" class="h-8 w-8 animate-spin text-loyola-red mb-4" />
-        <p class="text-gray-500 font-medium">Memuat Frequently Asked Questions...</p>
+        <p class="text-[#5a6373] font-medium">Memuat Frequently Asked Questions...</p>
       </div>
 
       <!-- Error State -->
@@ -120,43 +136,47 @@ const collapseAll = () => {
       </div>
 
       <!-- FAQ Accordion List -->
-      <div v-else class="border-t border-gray-400">
-        <div 
-          v-for="(faq, index) in faqData" 
+      <div v-else class="space-y-3">
+        <div
+          v-for="(faq, index) in faqData"
           :key="index"
-          class="border-b border-gray-400 group/item relative"
+          class="rounded-2xl border overflow-hidden transition-all duration-300"
+          :class="expandedItems[index]
+            ? 'border-loyola-red/25 shadow-[0_4px_20px_rgba(140,21,21,0.08)] bg-white'
+            : 'border-black/8 bg-white hover:border-black/14 shadow-[0_2px_10px_rgba(0,0,0,0.04)]'"
         >
-          <!-- Red line that appears on hover/active state -->
-          <div 
-            class="absolute left-0 top-0 bottom-0 w-[5px] bg-loyola-red transition-opacity duration-200 pointer-events-none"
-            :class="expandedItems[index] ? 'opacity-100' : 'opacity-0 group-hover/item:opacity-100'"
-          ></div>
-
-          <button 
+          <!-- Question row -->
+          <button
             @click="toggleItem(index)"
-            class="w-full flex justify-between items-center py-4 md:py-5 pl-4 md:pl-6 text-left hover:bg-gray-50 transition-colors group/btn focus:outline-hidden cursor-pointer"
+            class="w-full flex justify-between items-center px-6 py-5 text-left transition-colors focus:outline-hidden cursor-pointer group/btn"
           >
-            <span 
-              class="text-[16px] md:text-[17px] font-bold font-sans text-[#1a1a1a] pr-4 md:pr-8 leading-tight group-hover/btn:underline decoration-1 underline-offset-4"
-              :class="{ 'underline text-loyola-red': expandedItems[index] }"
+            <span
+              class="text-[14px] md:text-[15px] font-black text-[#111111] pr-4 md:pr-8 leading-tight group-hover/btn:text-loyola-red transition-colors"
+              :class="{ 'text-loyola-red': expandedItems[index] }"
             >
               {{ faq.question }}
             </span>
-            <div class="text-loyola-red text-xl md:text-2xl font-bold leading-none shrink-0 group-hover/btn:scale-110 transition-transform flex items-center justify-center">
-              <Icon :name="expandedItems[index] ? 'lucide:minus' : 'lucide:plus'" class="w-6 h-6 md:w-7 md:h-7" />
+            <div
+              class="shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-all duration-300"
+              :class="expandedItems[index]
+                ? 'bg-loyola-red text-white rotate-45'
+                : 'bg-[#f0f0f0] text-[#444] group-hover/btn:bg-loyola-red/10 group-hover/btn:text-loyola-red'"
+            >
+              <Icon name="lucide:plus" class="w-4 h-4" />
             </div>
           </button>
-          
-          <div 
-            v-show="expandedItems[index]" 
-            class="pb-5 md:pb-6 pl-4 md:pl-6 text-[#4a4a4a] text-[14px] md:text-[15px] leading-relaxed pr-4 md:pr-8"
+
+          <!-- Answer -->
+          <div
+            v-show="expandedItems[index]"
+            class="px-6 pb-6 text-[#5a6373] text-[14px] leading-relaxed border-t border-black/5 pt-4"
           >
             {{ faq.answer }}
           </div>
         </div>
 
         <!-- Empty State -->
-        <div v-if="faqData.length === 0" class="py-10 text-center text-gray-500">
+        <div v-if="faqData.length === 0" class="py-10 text-center text-[#5a6373]">
           Belum ada pertanyaan yang tersedia.
         </div>
       </div>
@@ -169,3 +189,4 @@ h2 {
   letter-spacing: -0.02em;
 }
 </style>
+

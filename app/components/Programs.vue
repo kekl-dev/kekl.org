@@ -22,53 +22,68 @@ const programs = [
 </script>
 
 <template>
-  <section id="programs" class="bg-[#f9f9f9] pb-12 pt-10 px-8">
-    <div class="max-w-6xl mx-auto">
-      <!-- Heading Section -->
-      <div class="max-w-4xl mx-auto text-center mb-16 md:mb-24 animate-fade-in">
-        <h2 class="text-3xl md:text-5xl font-serif font-bold text-[#1a1a1a] leading-tight tracking-tight mb-6">
-          Our <span class="highlight">Programs</span>
+  <section id="programs" class="bg-[#f7f7f7] py-6 md:py-20 px-6 md:px-20 overflow-hidden">
+    <div class="max-w-[1240px] mx-auto">
+
+      <!-- Heading -->
+      <div class="max-w-2xl mx-auto text-center mb-14 md:mb-18 animate-fade-in">
+        <p class="inline-flex items-center gap-2 text-[11px] font-black tracking-[0.25em] uppercase text-loyola-red mb-4">
+          <span class="h-px w-6 bg-loyola-red inline-block"></span>
+          Programs
+          <span class="h-px w-6 bg-loyola-red inline-block"></span>
+        </p>
+        <h2 class="text-xl md:text-3xl font-sans font-black text-[#111111] leading-tight tracking-tight mt-1">
+          Our <span class="text-loyola-red">Programs</span>
         </h2>
-        <p class="text-[15px] md:text-[16px] text-[#4a4a4a] leading-relaxed font-medium">
+        <p class="text-[15px] md:text-[16px] text-[#5a6373] leading-relaxed font-medium mt-5">
           Dapatkan akses eksklusif ke berbagai program pengembangan diri, jaringan profesional, dan inisiatif komunitas yang dirancang khusus untuk Keluarga Eks Kolese Loyola.
         </p>
       </div>
 
       <!-- Programs Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-10">
-        <div 
-          v-for="(program, index) in programs" 
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div
+          v-for="(program, index) in programs"
           :key="index"
-          class="flex flex-col space-y-6 group animate-slide-up"
+          class="group animate-slide-up"
           :style="{ animationDelay: `${(index + 1) * 0.1}s` }"
         >
-          <!-- Image -->
-          <div class="aspect-square overflow-hidden rounded-xs">
-            <img 
-              :src="program.image" 
-              :alt="program.title" 
-              class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-            >
-          </div>
+          <div class="bg-white rounded-3xl border border-black/6 shadow-[0_4px_20px_rgba(0,0,0,0.06)] h-full flex flex-col hover:shadow-[0_16px_48px_rgba(0,0,0,0.12)] hover:-translate-y-1 transition-all duration-400 p-4">
 
-          <!-- Content -->
-          <div class="space-y-4 flex-1">
-            <h3 class="text-2xl font-bold text-loyola-red leading-tight">
-              {{ program.title }}
-            </h3>
-            <p class="text-[15px] text-[#4a4a4a] leading-relaxed">
-              {{ program.description }}
-            </p>
-          </div>
+            <!-- Image — inset with rounded corners -->
+            <div class="relative rounded-2xl overflow-hidden bg-[#ececec] aspect-[4/3]">
+              <img
+                :src="program.image"
+                :alt="program.title"
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              >
+            </div>
 
-          <!-- Action -->
-          <div class="pt-4">
-            <a 
-              :href="program.link" 
-              class="inline-block w-full text-center border border-loyola-red py-4 text-[13px] font-black tracking-widest text-loyola-red hover:bg-loyola-red/5 transition-all duration-300 uppercase"
-            >
-              Get Involved
-            </a>
+            <!-- Content -->
+            <div class="pt-5 px-2 pb-2 flex-1 flex flex-col gap-3">
+
+              <!-- Title -->
+              <h3 class="text-[16px] md:text-[17px] font-sans font-bold text-[#111111] leading-snug">
+                {{ program.title }}
+              </h3>
+
+
+
+              <!-- Description -->
+              <p class="text-[13px] text-[#5a6373] leading-relaxed flex-1">
+                {{ program.description }}
+              </p>
+
+              <!-- Full-width CTA Button -->
+              <div class="pt-3 mt-auto">
+                <a
+                  :href="program.link"
+                  class="flex items-center justify-center w-full rounded-xl bg-loyola-red text-white py-3.5 text-[12px] font-black tracking-[0.18em] uppercase hover:bg-loyola-red/90 transition-all duration-300 shadow-[0_4px_16px_rgba(140,21,21,0.20)] hover:shadow-[0_8px_24px_rgba(140,21,21,0.30)]"
+                >
+                  Get Involved
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
