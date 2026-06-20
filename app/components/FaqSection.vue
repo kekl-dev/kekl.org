@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import { ref, computed, watch } from 'vue'
+import { faqData as localFaqData } from '@/data/faq'
 
+const { t, currentLang } = useLanguage()
+
+// --- API Fetching (Commented out for development) ---
+/*
 const config = useRuntimeConfig()
 console.log('Fetching FAQ from:', config.public.spreadsheetApi)
 const { data: rawData, pending, error } = await useFetch<any[]>(config.public.spreadsheetApi as string)
@@ -54,6 +59,17 @@ const faqData = computed(() => {
       answer: item.Answer || item.answer || ''
     }))
 })
+*/
+
+// --- Local Sample Data for Development ---
+const faqData = computed(() => {
+  return localFaqData.map((item: any) => ({
+    question: item[currentLang.value].question,
+    answer: item[currentLang.value].answer
+  }))
+})
+const pending = ref(false)
+const error = ref(null)
 
 const expandedItems = ref<boolean[]>([])
 
@@ -86,14 +102,14 @@ const collapseAll = () => {
       <div class="text-center mb-12 md:mb-16">
         <p class="inline-flex items-center gap-2 text-[11px] font-black tracking-[0.25em] uppercase text-loyola-red mb-4">
           <span class="h-px w-6 bg-loyola-red inline-block"></span>
-          FAQ
+          {{ t('faq.tag') }}
           <span class="h-px w-6 bg-loyola-red inline-block"></span>
         </p>
         <h2 class="text-3xl md:text-5xl font-sans  text-[#111111] leading-tight tracking-tight mt-1">
-          Frequently <span class="font-bold text-loyola-red">Asked Questions</span>
+          {{ t('faq.title1') }}<span class="font-bold text-loyola-red">{{ t('faq.title2') }}</span>
         </h2>
         <p class="text-[15px] md:text-[16px] text-[#5a6373] font-medium mt-5">
-          Jawaban cepat untuk pertanyaan yang paling sering ditanyakan.
+          {{ t('faq.desc') }}
         </p>
       </div>
 
@@ -107,7 +123,7 @@ const collapseAll = () => {
             ? 'border-gray-200 text-gray-400 bg-white cursor-not-allowed'
             : 'border-loyola-red text-loyola-red bg-white hover:bg-loyola-red hover:text-white cursor-pointer shadow-[0_4px_16px_rgba(140,21,21,0.12)]'"
         >
-          Expand all
+          {{ t('faq.btn_expand') }}
           <Icon name="lucide:plus" class="w-3.5 h-3.5" />
         </button>
         <button
@@ -118,7 +134,7 @@ const collapseAll = () => {
             ? 'border-gray-200 text-gray-400 bg-white cursor-not-allowed'
             : 'border-black/20 text-[#111111] bg-white hover:bg-black/5 cursor-pointer hover:border-black/30 shadow-[0_4px_16px_rgba(0,0,0,0.06)]'"
         >
-          Collapse all
+          {{ t('faq.btn_collapse') }}
           <Icon name="lucide:minus" class="w-3.5 h-3.5" />
         </button>
       </div>
@@ -126,13 +142,13 @@ const collapseAll = () => {
       <!-- Loading State -->
       <div v-if="pending" class="py-20 text-center">
         <Icon name="lucide:loader-2" class="h-8 w-8 animate-spin text-loyola-red mb-4" />
-        <p class="text-[#5a6373] font-medium">Memuat Frequently Asked Questions...</p>
+        <p class="text-[#5a6373] font-medium">{{ t('faq.loading') }}</p>
       </div>
 
       <!-- Error State -->
       <div v-else-if="error" class="py-20 text-center text-red-500">
-        <p class="font-bold mb-2">Gagal memuat FAQ</p>
-        <p class="text-sm">Silakan coba lagi nanti atau hubungi administrator.</p>
+        <p class="font-bold mb-2">{{ t('faq.error_title') }}</p>
+        <p class="text-sm">{{ t('faq.error_desc') }}</p>
       </div>
 
       <!-- FAQ Accordion List -->
@@ -177,7 +193,7 @@ const collapseAll = () => {
 
         <!-- Empty State -->
         <div v-if="faqData.length === 0" class="py-10 text-center text-[#5a6373]">
-          Belum ada pertanyaan yang tersedia.
+          {{ t('faq.empty') }}
         </div>
       </div>
     </div>

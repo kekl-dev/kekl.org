@@ -1,24 +1,28 @@
 <script setup lang="ts">
-const benefits = [
+import { computed } from 'vue'
+
+const { t } = useLanguage()
+
+const benefits = computed(() => [
   {
-    title: 'Any Platform. Anytime. Anywhere',
-    description: `Reconnect, build new relationships, and relive your best moments with ease, whether you're browsing on your phone, tablet, or desktop. Enjoy a smooth, intuitive experience designed to keep you connected wherever life takes you.`,
+    title: t('benefits.benefit1_title'),
+    description: t('benefits.benefit1_desc'),
     image: 'https://img.buzzfeed.com/buzzfeed-static/static/2024-06/1/15/asset/bb36008c8025/sub-buzz-8947-1717257505-1.jpg',
     icon: 'lucide:monitor-smartphone'
   },
   {
-    title: 'Community Connections',
-    description: 'Get closer to the communities that matter to you with search fields like community affinity, interests, area of study, location, and class year.',
+    title: t('benefits.benefit2_title'),
+    description: t('benefits.benefit2_desc'),
     image: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=800&auto=format&fit=crop',
     icon: 'lucide:users'
   },
   {
-    title: 'Career Connections',
-    description: 'Open the door for future opportunities by finding others based on industry, company, skills & specialties, job title, and availability to offer career support.',
+    title: t('benefits.benefit3_title'),
+    description: t('benefits.benefit3_desc'),
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu1TVnn0S55fsUy0xPk506rK72a38bKAtJVg&s',
     icon: 'lucide:badge-check'
   }
-]
+])
 </script>
 
 <template>
@@ -29,15 +33,14 @@ const benefits = [
       <div class="flex justify-end mb-12 md:mb-16 animate-fade-in">
         <div class="max-w-[640px] text-right">
           <p class="inline-flex items-center justify-end gap-2 text-[11px] font-black tracking-[0.25em] uppercase text-loyola-red mb-4">
-            Benefits
+            {{ t('benefits.tag') }}
             <span class="h-px w-6 bg-loyola-red inline-block"></span>
           </p>
           <h2 class="text-xl md:text-3xl font-sans text-[#111111] leading-tight tracking-tight">
-            Keluarga Eks Kolese Loyola At Your <span class="font-bold text-loyola-red">Fingertips</span>
+            {{ t('benefits.title1') }} <span class="font-bold text-loyola-red">{{ t('benefits.title2') }}</span>
           </h2>
           <p class="text-[14px] md:text-[15px] text-[#5a6373] leading-relaxed font-medium mt-4">
-            The Alumni Directory is the only verified online listing of Loyola alumni.
-            Whether you're looking to reconnect with a classmate, seek advice, or find professional connections.
+            {{ t('benefits.description') }}
           </p>
         </div>
       </div>

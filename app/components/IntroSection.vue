@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const { t } = useLanguage()
 </script>
 
 <template>
@@ -8,23 +9,23 @@
       <!-- Left Content: Text & CTA -->
       <div class="flex-1 space-y-6 md:space-y-10 text-left">
         <h2 class="text-3xl md:text-4xl font-sans text-[#f9f9f9] leading-[1.1] tracking-tight">
-          Connect • Share • Collaborate<br>
-          <span class="text-accent font-bold">All in One Place</span>
+          {{ t('intro.title1') }}<br>
+          <span class="text-accent font-bold">{{ t('intro.title2') }}</span>
         </h2>
 
         <div class="space-y-4 md:space-y-6 max-w-2xl mx-auto lg:mx-0 text-[15px] md:text-[16px] text-[#f9f9f9] leading-relaxed font-medium">
           <p>
-            Find various events, experiences and many ways to connect with, and support other KEKL member. Update your profile today and start making more meaningful and impactful connections.
+            {{ t('intro.desc1') }}
           </p>
           <p>
-            Check out our <a href="#" class="text-accent border-b-2 border-accent font-bold hover:text-accent/80 transition-colors">video</a> for tips on how to user the Alumni Directory and start making connections today!
+            {{ t('intro.desc2_start') }}<a href="#" class="text-accent border-b-2 border-accent font-bold hover:text-accent/80 transition-colors">{{ t('intro.desc2_link') }}</a>{{ t('intro.desc2_end') }}
           </p>
         </div>
 
         <div class="pt-2 md:pt-4">
         <a href="#" class="inline-flex items-center gap-2 bg-accent text-loyola-red px-10 py-4 font-black text-[11px] hover:bg-accent/90 transition-all rounded-full shadow-[0_8px_28px_rgba(140,21,21,0.30)] hover:shadow-[0_14px_40px_rgba(140,21,21,0.40)] hover:-translate-y-0.5 tracking-[0.22em] uppercase">
           <Icon name="ph:youtube-logo-fill" class="w-6 h-6" />
-          Visit the Directory
+          {{ t('intro.btn_visit') }}
         </a>
         </div>
       </div>
@@ -46,8 +47,9 @@
 
           <!-- Caption styling -->
           <div class="mt-6 text-right space-y-1">
-            <p class="text-sm font-bold text-[#f9f9f9]">How to Update Your Alumni Directory Profile</p>
-            <p class="text-[12px] text-[#f9f9f9] italic">Please note that the LinkedIn Import feature has been discontinued as of March 31, 2024.</p>
+            <p class="text-sm font-bold text-[#f9f9f9]">How to Update Your KEKL Directory Profile</p>
+            <p class="text-[12px] text-[#f9f9f9] italic">Please note that all Loyola College alumni may create an account in the KEKL Directory. <br> Please report any misuse or any actions that violate the terms to the administrator.
+            </p>
           </div>
         </div>
       </div>

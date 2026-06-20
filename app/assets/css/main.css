@@ -40,6 +40,11 @@
     font-family: var(--font-serif);
   }
 
+  a {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
   /* Selection style */
   ::selection {
     background-color: transparent;

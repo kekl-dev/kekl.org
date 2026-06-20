@@ -17,37 +17,38 @@ const mapLink = "https://maps.app.goo.gl/bpam6Qfk66JSzRA4A"
         <div class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-12 text-[14px] text-white/70 leading-relaxed mb-12 md:mb-14">
           <!-- Column 1: Address -->
           <div class="space-y-1">
-            <p class="font-black text-white text-[16px]">Loyola High School</p>
+            <p class="font-black text-white text-[16px]">Loyola Senior High School</p>
             <p>Karang Anyar Street No.37</p>
             <p>Semarang, Central Java 50135</p>
             <a :href="mapLink" class="inline-flex items-center gap-2 text-white hover:text-loyola-red transition-colors font-black mt-3 text-[13px] tracking-[0.14em] uppercase">
-              Map 
+              Map & Directions 
               <span class="text-loyola-red text-[11px] font-black">↗</span>
             </a>
           </div>
 
           <!-- Column 2 -->
           <ul class="space-y-4 font-black text-white">
-            <li><a href="#" class="hover:text-loyola-red transition-colors text-[14px]">Get to Know SKL</a></li>
-            <li><a href="#" class="hover:text-loyola-red transition-colors text-[14px]">LOYOLA Magazine</a></li>
-            <li><a href="#" class="hover:text-loyola-red transition-colors text-[14px]">Contact SKL</a></li>
-            <li><a href="#" class="hover:text-loyola-red transition-colors text-[14px]">Help</a></li>
+            <li><a href="#" class="hover:text-loyola-red transition-colors text-[14px]">Event</a></li>
+            <li><a href="#" class="hover:text-loyola-red transition-colors text-[14px]">Story</a></li>
+            <li><a href="#" class="hover:text-loyola-red transition-colors text-[14px]">Programs</a></li>
+            <li><a href="#" class="hover:text-loyola-red transition-colors text-[14px]">Merchandise</a></li>
+            <li><a href="#" class="hover:text-loyola-red transition-colors text-[14px]">Volunteer</a></li>
           </ul>
 
           <!-- Column 3 -->
           <ul class="space-y-4 text-white">
-            <li><a href="#" class="hover:text-loyola-red transition-colors text-[14px]">Access SKL Member Card</a></li>
-            <li><a href="#" class="hover:text-loyola-red transition-colors text-[14px]">Check your alumni email</a></li>
-            <li><a href="#" class="hover:text-loyola-red transition-colors text-[14px]">My Alumni Account</a></li>
-            <li><a href="#" class="hover:text-loyola-red transition-colors text-[14px]">Give to Loyola</a></li>
+            <li><a href="#" class="hover:text-loyola-red transition-colors text-[14px]">Alumni Regional Chapter (BPK)</a></li>
+            <li><a href="#" class="hover:text-loyola-red transition-colors text-[14px]">Endowment Fund (Dana Abadi)</a></li>
+            <li><a href="#" class="hover:text-loyola-red transition-colors text-[14px]">Scholarship (Beasiswa)</a></li>
+            <li><a href="#" class="hover:text-loyola-red transition-colors text-[14px]">Hobby Club (Organisasi Hobi)</a></li>
           </ul>
 
           <!-- Column 4 -->
           <ul class="space-y-4 text-white/70">
-            <li><a href="#" class="hover:text-white transition-colors text-[14px]">Accessibility</a></li>
-            <li><a href="#" class="hover:text-white transition-colors text-[14px]">Privacy Policy</a></li>
-            <li><a href="#" class="hover:text-white transition-colors text-[14px]">Terms of Use</a></li>
-            <li><a href="#" class="hover:text-white transition-colors text-[14px]">Code of Conduct</a></li>
+            <li><a href="#" class="hover:text-white transition-colors text-[14px]">Access KEKL Directory <Icon name="lucide:arrow-up-right" class="w-3 h-3 opacity-60" /></a></li>
+            <li><a href="#" class="hover:text-white transition-colors text-[14px]">Feedback</a></li>
+            <!-- <li><a href="#" class="hover:text-white transition-colors text-[14px]">Terms of Use</a></li>
+            <li><a href="#" class="hover:text-white transition-colors text-[14px]">Code of Conduct</a></li> -->
           </ul>
         </div>
 
@@ -83,26 +84,25 @@ const mapLink = "https://maps.app.goo.gl/bpam6Qfk66JSzRA4A"
           <div class="flex flex-row md:flex-col justify-center md:justify-start gap-x-8 sm:gap-x-16 md:gap-y-3 mb-8 md:mb-6 w-full md:w-auto max-w-[420px] md:max-w-none">
             <!-- Group 1: Left Col (Mobile) / Row 1 (Desktop) -->
             <ul class="flex flex-col md:flex-row text-left gap-y-4 md:gap-x-6 lg:gap-x-8 font-black text-[13px] md:text-[14px] text-white tracking-[0.12em] uppercase">
-              <li><a href="#" class="hover:opacity-80">Loyola Home</a></li>
-              <li><a href="#" class="hover:opacity-80">Maps & Directions</a></li>
-              <li><a href="#" class="hover:opacity-80">Search Loyola</a></li>
-              <li><a href="#" class="hover:opacity-80">Emergency Info</a></li>
+              <li><a href="#" class="hover:opacity-80">Loyola College</a></li>
+              <li><a href="#" class="hover:opacity-80">Map & Directions</a></li>
+              <li><a href="#" class="hover:opacity-80">Committee</a></li>
             </ul>
             
             <!-- Group 2: Right Col (Mobile) / Row 2 (Desktop) -->
             <ul class="flex flex-col md:flex-row flex-wrap text-left gap-y-4 md:gap-x-5 lg:gap-x-6 font-medium text-[13px] text-white/90">
               <li><a href="#" class="hover:text-white transition-colors">Terms of Use</a></li>
-              <li><a href="#" class="hover:text-white transition-colors">Privacy</a></li>
-              <li><a href="#" class="hover:text-white transition-colors">Copyright</a></li>
-              <li><a href="#" class="hover:text-white transition-colors">Trademarks</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Privacy Policy </a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Feedback</a></li>
+              <!-- <li><a href="#" class="hover:text-white transition-colors">Trademarks</a></li>
               <li><a href="#" class="hover:text-white transition-colors">Non-Discrimination</a></li>
-              <li><a href="#" class="hover:text-white transition-colors">Accessibility</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Accessibility</a></li> -->
             </ul>
           </div>
 
           <!-- Copyright -->
           <p class="text-white/85 text-[13px] text-center md:text-left mt-2 md:mt-0">
-            © Loyola High School. Semarang, Central Java 50135.
+            © Keluarga Eks Kolese Loyola, Semarang.
           </p>
         </div>
       </div>

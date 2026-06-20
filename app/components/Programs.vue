@@ -1,47 +1,49 @@
 <script setup lang="ts">
+const { t } = useLanguage()
+
 const programs = [
   {
-    title: 'Alumni Regional Chapters',
-    description: 'We are pleased to revive Alumni Regional Chapters in San Diego, Orange County, the Bay Area, Seattle, New York City, and the DMV. We look forward to working alongside alumni in each area to strengthen connections, foster networking, and provide meaningful avenues for engagement and service.',
+    title: 'Alumni Regional Chapter (BPK)',
+    description: 'Reuniting Loyola alumni across regions to strengthen bonds and expand collaboration.Join fellow alumni in your area to build meaningful connections, foster community spirit, and create opportunities for shared initiatives that support the KEKL family.',
     image: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=800&auto=format&fit=crop',
     link: '#'
   },
   {
-    title: 'KEKL Mentorship Program',
-    description: 'The KEKL Mentorship Program connects experienced alumni with students and younger alumni to provide guidance, support, and professional development. Join us in building a stronger network of support for the next generation of Loyola leaders.',
+    title: 'Endowment Fund (Dana Abadi)',
+    description: 'A long‑term investment dedicated to sustaining KEKL’s mission and future impact.Your contribution to the KEKL Endowment Fund helps secure ongoing support for educational programs, community development, and initiatives that preserve the legacy of Loyola for generations to come.',
     image: 'https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=800&auto=format&fit=crop',
-    link: '#'
+    link: 'https://kekl-scholarship-danaabadi.framer.website/dana-abadi'
   },
   {
-    title: 'Professional Networking',
-    description: 'Expand your professional reach through our networking events and interest-based groups. Whether you are looking for career advice or seeking to collaborate on new ventures, the KEKL network is here to help you succeed in your professional journey.',
+    title: 'Scholarship (Beasiswa)',
+    description: 'Opening doors to education for deserving Loyola students.The KEKL Scholarship Program provides financial assistance to students in need, ensuring they can continue their studies and pursue their potential with confidence and hope.',
     image: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=800&auto=format&fit=crop',
-    link: '#'
+    link: 'https://kekl-scholarship-danaabadi.framer.website/'
   }
 ]
 </script>
 
 <template>
-  <section id="programs" class="bg-[#f7f7f7] py-6 md:py-20 px-6 md:px-20 overflow-hidden">
+  <section id="programs" class="bg-loyola-red py-6 md:py-20 px-6 md:px-20 overflow-hidden">
     <div class="max-w-[1240px] mx-auto">
 
       <!-- Heading -->
       <div class="max-w-2xl mx-auto text-center mb-14 md:mb-18 animate-fade-in">
-        <p class="inline-flex items-center gap-2 text-[11px] font-black tracking-[0.25em] uppercase text-loyola-red mb-4">
-          <span class="h-px w-6 bg-loyola-red inline-block"></span>
-          Programs
-          <span class="h-px w-6 bg-loyola-red inline-block"></span>
+        <p class="inline-flex items-center gap-2 text-[11px] font-black tracking-[0.25em] uppercase text-white/80 mb-4">
+          <span class="h-px w-6 bg-white/80 inline-block"></span>
+          {{ t('programs.tag') }}
+          <span class="h-px w-6 bg-white/80 inline-block"></span>
         </p>
-        <h2 class="text-xl md:text-3xl font-sans font-black text-[#111111] leading-tight tracking-tight mt-1">
-          Our <span class="text-loyola-red">Programs</span>
+        <h2 class="text-xl md:text-3xl font-sans font-black text-white leading-tight tracking-tight mt-1">
+          {{ t('programs.title1') }} <span class="text-white/80">{{ t('programs.title2') }}</span>
         </h2>
-        <p class="text-[15px] md:text-[16px] text-[#5a6373] leading-relaxed font-medium mt-5">
-          Dapatkan akses eksklusif ke berbagai program pengembangan diri, jaringan profesional, dan inisiatif komunitas yang dirancang khusus untuk Keluarga Eks Kolese Loyola.
+        <p class="text-[15px] md:text-[16px] text-white/80 leading-relaxed font-medium mt-5">
+          {{ t('programs.description') }}
         </p>
       </div>
 
       <!-- Programs Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+      <!-- <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
         <div
           v-for="(program, index) in programs"
           :key="index"
@@ -50,7 +52,7 @@ const programs = [
         >
           <div class="bg-white rounded-3xl border border-black/6 shadow-[0_4px_20px_rgba(0,0,0,0.06)] h-full flex flex-col hover:shadow-[0_16px_48px_rgba(0,0,0,0.12)] hover:-translate-y-1 transition-all duration-400 p-4">
 
-            <!-- Image — inset with rounded corners -->
+            Image — inset with rounded corners
             <div class="relative rounded-2xl overflow-hidden bg-[#ececec] aspect-[4/3]">
               <img
                 :src="program.image"
@@ -59,22 +61,22 @@ const programs = [
               >
             </div>
 
-            <!-- Content -->
+            Content
             <div class="pt-5 px-2 pb-2 flex-1 flex flex-col gap-3">
 
-              <!-- Title -->
+              Title
               <h3 class="text-[16px] md:text-[17px] font-sans font-bold text-[#111111] leading-snug">
                 {{ program.title }}
               </h3>
 
 
 
-              <!-- Description -->
+              Description
               <p class="text-[13px] text-[#5a6373] leading-relaxed flex-1">
                 {{ program.description }}
               </p>
 
-              <!-- Full-width CTA Button -->
+              Full-width CTA Button
               <div class="pt-3 mt-auto">
                 <a
                   :href="program.link"
@@ -86,7 +88,7 @@ const programs = [
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
 </template>

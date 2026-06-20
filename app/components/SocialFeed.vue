@@ -2,6 +2,8 @@
 import { ref, computed } from 'vue'
 import { instagramPosts } from '@/data/instagramPosts'
 
+const { t } = useLanguage()
+
 const isExpanded = ref(false)
 const expandedCaptions = ref<Set<number>>(new Set())
 
@@ -42,10 +44,10 @@ const formatCaption = (text: string) => {
         <div>
           <p class="inline-flex items-center gap-2 text-[11px] font-black tracking-[0.25em] uppercase text-loyola-red mb-3">
             <span class="h-px w-6 bg-loyola-red inline-block"></span>
-            Instagram
+            {{ t('social.tag') }}
           </p>
           <h2 class="text-xl md:text-3xl font-sans text-[#111111] leading-tight tracking-tight">
-            Update Terbaru dari <span class="font-bold text-loyola-red"> Instagram Kami </span>
+            {{ t('social.title1') }}<span class="font-bold text-loyola-red">{{ t('social.title2') }}</span>
           </h2>
         </div>
         <a
@@ -54,23 +56,23 @@ const formatCaption = (text: string) => {
           class="shrink-0 items-center justify-center gap-2 px-7 py-3.5 font-black text-[11px] transition-all duration-300 tracking-[0.2em] uppercase rounded-full cursor-pointer shadow-[0_8px_24px_rgba(0,0,0,0.08)] bg-loyola-red text-white hover:bg-loyola-red/90 hover:-translate-y-0.5 hover:shadow-[0_14px_36px_rgba(140,21,21,0.30)] self-start sm:self-auto hidden md:flex"
         >
         <Icon name="lucide:instagram" class="w-6 h-6" />
-          See More
+          {{ t('social.btn_see_more') }}
       </a>
       </div>
 
       <!-- Instagram Grid -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+      <div class="columns-2 md:columns-4 gap-3 md:gap-4">
         <a
           v-for="post in previewPosts"
           :key="post.id"
           :href="post.link"
           target="_blank"
-          class="group relative rounded-xl overflow-hidden bg-[#e8e8e8] border border-black/5 shadow-[0_4px_16px_rgba(0,0,0,0.06)]"
+          class="group relative block rounded-xl overflow-hidden bg-[#e8e8e8] border border-black/5 shadow-[0_4px_16px_rgba(0,0,0,0.06)] break-inside-avoid mb-3 md:mb-4"
         >
           <img
             :src="post.image"
             :alt="post.caption"
-            class="w-full h-full object-cover aspect-square transition-transform duration-700 group-hover:scale-105"
+            class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
             loading="lazy"
           >
 
@@ -94,7 +96,7 @@ const formatCaption = (text: string) => {
           class="flex items-center justify-center gap-2 w-full rounded-full bg-loyola-red text-white py-3.5 text-[12px] font-black tracking-[0.18em] uppercase hover:bg-loyola-red/90 transition-all duration-300 shadow-[0_4px_16px_rgba(140,21,21,0.20)] hover:shadow-[0_8px_24px_rgba(140,21,21,0.30)] self-start sm:self-auto md:hidden mt-10"
         >
         <Icon name="lucide:instagram" class="w-6 h-6" />
-          See More
+          {{ t('social.btn_see_more') }}
       </a>
 
     </div>

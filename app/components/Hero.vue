@@ -2,12 +2,12 @@
 </script>
 
 <template>
-  <section class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+  <section class="bg-loyola-red relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
     <!-- Background Image with Overlay -->
     <div class="absolute inset-0 z-0">
-      <img src="~/assets/img/KEKL-collage-hero.png" alt="Loyola Alumni" class="w-full h-full object-cover">
+      <img src="~/assets/img/background-hero.jpg" alt="Loyola Alumni" class="h-full w-full object-cover object-center">
       <!-- Dark gradient overlay for premium look -->
-      <div class="absolute inset-0 bg-linear-to-b from-black/70 via-black/40 to-black/90"></div>
+      <div class="absolute top-0 inset-0 bg-linear-to-b from-black/70 via-black/40 to-black/90"></div>
     </div>
 
     <!-- Centered Content -->
@@ -16,15 +16,15 @@
         LOYOLA COLLEGE ALUMNI DIRECTORY
       </p>
       
-      <h1 class="text-5xl md:text-7xl font-sans font-black mb-8 md:mb-10 leading-[1.05] animate-slide-up tracking-tight">
-        Men & Women<br> 
-        <span class="text-white relative inline-block">
-          for Others
+      <h1 class="text-[rgb(255,255,255,0.4)]  text-5xl md:text-7xl font-sans font-black mb-8 md:mb-10 leading-[1.05] animate-slide-up tracking-tight">
+        Being Men and Women<br> 
+        <span class="text-[rgb(255,255,255,0.4)] inline-block">
+           for and with others
         </span>
       </h1>
 
       <p class="text-[15px] md:text-xl font-medium max-w-2xl mx-auto mb-12 md:mb-16 text-white/90 leading-relaxed drop-shadow-md px-4 md:px-0">
-        Find and connect with fellow KEKL. Explore any potential collaboration with other alumni within the same value.
+        Find and connect with fellow alumni. Explore potential collaborations with peers who share the same values.
       </p>
 
       <!-- Action Links -->
@@ -35,7 +35,7 @@
             <Icon name="lucide:book-open" class="w-6 h-6" />
           </div>
           <div class="relative py-1">
-            <span>Visit the Directory <Icon name="lucide:arrow-right" class="text-accent-yellow group-hover:translate-x-1 inline-block transition-transform ml-1" /></span>
+            <span>Visit Alumni Directory <Icon name="lucide:arrow-right" class="text-accent-yellow group-hover:translate-x-1 inline-block transition-transform ml-1" /></span>
             <!-- Animated Sliding Underline -->
             <div class="absolute bottom-0 left-0 w-0 h-[2px] bg-accent-yellow transition-all duration-500 ease-out group-hover:w-full"></div>
           </div>
@@ -76,7 +76,7 @@
     <!-- Bottom Attribution Bar -->
     <div class="relative w-full py-5 text-center text-sm font-light text-white/60">
       <div class="max-w-4xl mx-auto px-8">
-        Access to the KEKL Alumni Directory is restricted to registered members. A preliminary KYC verification will be carried out to confirm member authenticity.
+        Access to the Alumni Directory is restricted to registered members. <br> A preliminary verification process will be conducted to confirm member authenticity.
       </div>
     </div>
   </section>

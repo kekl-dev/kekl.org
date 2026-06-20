@@ -14,6 +14,9 @@ useHead({
       <IntroSection />
       <AlumniBenefits />
       <Programs />
+      <RegionalChapter />
+      <EndowmentFund />
+      <Scholarship />
       <SocialFeed />
       <FaqSection />
     </main>
