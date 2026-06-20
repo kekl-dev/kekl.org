@@ -4,6 +4,7 @@ import { defineVitestProject } from '@nuxt/test-utils/config'
 
 export default defineConfig({
   test: {
+    passWithNoTests: true,
     projects: [
       await defineVitestProject({
         test: {
