@@ -14,7 +14,7 @@ Website ini adalah landing page untuk komunitas KEKL (Eks Kolese Loyola) yang di
 
 ## Versi
 
-Versi saat ini: **0.1.3**
+Versi saat ini: **0.1.7**
 
 Skema versi menggunakan **Semantic Versioning (SemVer)**: `MAJOR.MINOR.PATCH`
 
@@ -56,6 +56,82 @@ npm run dev
 ```
 
 Akses: `http://localhost:3000`
+
+## Know-how untuk melanjutkan (developer/AI handoff)
+
+Bagian ini adalah “cara lanjut kerja” paling praktis agar developer/agent berikutnya cepat produktif dan tidak melanggar asumsi desain project.
+
+### 1) Baca konteks project (wajib)
+
+- Baca [AI_MEMORY.md](AI_MEMORY.md) untuk ringkasan keputusan teknis, koneksi, dan pitfalls yang sudah pernah terjadi.
+- Baca bagian “Mode rendering: SPA (CSR) tanpa SSR” di README ini sebelum mengubah konfigurasi Nuxt/Firebase.
+
+### 2) Pastikan environment benar
+
+- Gunakan Node LTS yang kompatibel dengan Nuxt 4.x (disarankan Node 22.12+ atau 24.11+).
+- Install dependency:
+
+```bash
+npm install
+```
+
+### 3) Jalankan dev server dan cek cepat
+
+```bash
+npm run dev
+```
+
+- Buka `http://localhost:3000`
+- Jika muncul error banyak seperti `Failed to fetch dynamically imported module` / `/_nuxt/@fs/...`, biasanya karena hot reload/restart membuat browser cache jadi stale. Hard refresh (Cmd+Shift+R) atau restart dev server.
+
+### 4) Cara melakukan perubahan yang aman
+
+- Ubah urutan/penambahan section: edit `app/app.vue`.
+- Ubah konten teks (wajib multi-language):
+  - Tambah/update key di `app/utils/translations.ts` untuk `id` dan `en`.
+  - Gunakan `useLanguage().t('path.key')` di komponen.
+- Ubah link eksternal: cek `Header.vue`, `Programs.vue`, `EndowmentFund.vue`, `Scholarship.vue`.
+- Update konten FAQ: `app/data/faq.ts` (saat ini source utama FAQ).
+- Update konten Instagram (mock): `app/data/instagramPosts.ts` + asset `app/assets/img/InstagramPosts/`.
+
+### 5) Build & verifikasi sebelum deploy
+
+Firebase Hosting menyajikan file statis, jadi build production wajib:
+
+```bash
+npm run generate
+```
+
+Output deploy berada di `.output/public`.
+
+Verifikasi minimal:
+
+```bash
+npm test
+npm audit
+```
+
+Target keamanan: tidak ada `high` dan `critical` vulnerabilities (idealnya `0 vulnerabilities`).
+
+### 6) Deploy ke Firebase Hosting
+
+Pastikan project Firebase yang aktif benar:
+
+```bash
+firebase use
+```
+
+Deploy:
+
+```bash
+firebase deploy --only hosting
+```
+
+### 7) Disiplin versioning & changelog (wajib)
+
+- Setiap perubahan fungsional/konfigurasi/dependency harus:
+  1. Naikkan “Versi saat ini” (SemVer)
+  2. Tambah entri baru di “Changelog”
 
 ## Konfigurasi environment
 
@@ -269,6 +345,24 @@ Aturan:
 - Setiap perubahan fungsional/konfigurasi/deployment wajib menambah entry changelog di bawah.
 - Naikkan versi di bagian “Versi saat ini” dan tambahkan entri baru paling atas.
 - Format tanggal: `YYYY-MM-DD`.
+
+### 0.1.7 - 2026-06-20
+
+- Tambah bagian “Know-how untuk melanjutkan (developer/AI handoff)” sebagai panduan lanjutan project.
+
+### 0.1.6 - 2026-06-20
+
+- Perbaiki layout kartu Scholarship agar gambar kiri tetap tampil di layar lebar (menggunakan aspect ratio, bukan tinggi fixed).
+
+### 0.1.5 - 2026-06-20
+
+- Perhalus copywriting kartu Scholarship (tidak eksplisit meminta timbal balik) dan perbaiki spacing agar konten tidak terpotong.
+- Update terjemahan (ID/EN) untuk konten kartu scholarship.
+
+### 0.1.4 - 2026-06-20
+
+- Sederhanakan kartu “Scholarship” menjadi 1 kartu ringkasan (tuition fee, kegiatan sosial, mentoring, dan ekspektasi kontribusi alumni).
+- Update terjemahan (ID/EN) untuk konten kartu scholarship.
 
 ### 0.1.3 - 2026-06-20
 
