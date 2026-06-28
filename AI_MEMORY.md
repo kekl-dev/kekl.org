@@ -6,7 +6,7 @@ Dokumen ini adalah catatan konteks praktis untuk agent/AI berikutnya agar cepat 
 
 - Aplikasi: landing page KEKL (Eks Kolese Loyola)
 - Framework: Nuxt 4 + Vue 3
-- Mode: SPA/CSR (SSR dimatikan)
+- Mode: Static (SSG/prerender) + CSR hydration (tanpa server SSR runtime)
 - Target hosting: Firebase Hosting (static hosting)
 - Output yang di-deploy: `.output/public`
 
@@ -21,7 +21,11 @@ Dokumen ini adalah catatan konteks praktis untuk agent/AI berikutnya agar cepat 
   2. `npm run generate` (wajib untuk static output)
   3. `firebase deploy --only hosting`
 
-Catatan: karena Firebase Hosting tidak menjalankan Node server untuk SSR, pastikan `nuxt.config.ts` tetap `ssr: false`.
+Catatan penting:
+
+- Firebase Hosting tidak menjalankan Node server untuk SSR runtime.
+- Tetapi untuk menghasilkan `index.html` (static output), konfigurasi saat ini memakai `ssr: true` agar Nuxt bisa melakukan prerender saat build (`npm run generate`).
+- Pitfall: jika `ssr: false`, output `.output/public` bisa tidak memiliki `index.html` sehingga Firebase menampilkan error “no index.html found”.
 
 ## Struktur source
 

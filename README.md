@@ -6,7 +6,7 @@ Website ini adalah landing page untuk komunitas KEKL (Eks Kolese Loyola) yang di
 
 - Repo: `kekl.org`
 - Framework: Nuxt 4 + Vue 3
-- Mode rendering: SPA / CSR (SSR nonaktif)
+- Mode rendering: Static (SSG/prerender) + CSR hydration (tanpa server SSR runtime)
 - Styling: Tailwind CSS
 - Hosting: Firebase Hosting
 - Output hosting: `.output/public`
@@ -14,7 +14,7 @@ Website ini adalah landing page untuk komunitas KEKL (Eks Kolese Loyola) yang di
 
 ## Versi
 
-Versi saat ini: **0.1.10**
+Versi saat ini: **0.1.11**
 
 Skema versi menggunakan **Semantic Versioning (SemVer)**: `MAJOR.MINOR.PATCH`
 
@@ -37,16 +37,20 @@ Skema versi menggunakan **Semantic Versioning (SemVer)**: `MAJOR.MINOR.PATCH`
 Script yang tersedia (lihat `package.json`):
 
 - `npm run dev` → mode development
-- `npm run generate` → build output statis untuk Firebase Hosting (SPA/CSR) ke `.output/public`
+- `npm run generate` → build output statis (SSG/prerender) untuk Firebase Hosting ke `.output/public`
 - `npm test` / `npm run test:nuxt` → test via Vitest
 
-## Mode rendering: SPA (CSR) tanpa SSR
+## Mode rendering: Static (SSG/prerender) tanpa server SSR runtime
 
-Firebase Hosting hanya menyajikan file statis dan tidak menjalankan server Node.js untuk SSR. Karena itu project ini dikonfigurasi sebagai **SPA (Client-Side Rendering)**:
+Firebase Hosting hanya menyajikan file statis dan tidak menjalankan server Node.js untuk SSR runtime. Karena itu project ini harus dideploy sebagai **static site** dari output `nuxt generate`:
 
-- SSR dimatikan di `nuxt.config.ts` dengan `ssr: false`.
-- Build untuk production menggunakan `npm run generate` agar menghasilkan output statis di `.output/public`.
-- Untuk mendukung routing SPA (jika suatu saat ada route non-root), `firebase.json` memiliki rewrite `** → /index.html`.
+- `nuxt.config.ts` memakai `ssr: true` agar Nuxt bisa menghasilkan `index.html` (prerender/SSG) saat build.
+- Deploy ke Firebase tetap 100% statis: yang diupload hanya isi folder `.output/public`.
+- `firebase.json` memiliki rewrite `** → /index.html` sebagai fallback untuk client-side routing bila diperlukan.
+
+Pitfall:
+
+- Jika `ssr: false` pada versi Nuxt yang dipakai saat ini, output `.output/public` bisa tidak menghasilkan `index.html`, sehingga Firebase Hosting akan menampilkan halaman error “no index.html found”.
 
 ## Menjalankan lokal (development)
 
@@ -351,6 +355,11 @@ Aturan:
 - Setiap perubahan fungsional/konfigurasi/deployment wajib menambah entry changelog di bawah.
 - Naikkan versi di bagian “Versi saat ini” dan tambahkan entri baru paling atas.
 - Format tanggal: `YYYY-MM-DD`.
+
+### 0.1.11 - 2026-06-28
+
+- Perbaiki output deploy Firebase Hosting: aktifkan `ssr: true` untuk build-time prerender supaya `.output/public` menghasilkan `index.html` (tanpa SSR runtime).
+- Update dokumentasi mode rendering agar tidak terjadi deploy “kosong” (no index.html found).
 
 ### 0.1.10 - 2026-06-20
 
