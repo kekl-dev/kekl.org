@@ -68,6 +68,34 @@ export const translations = {
       benefit3_pill1: 'Bimbingan Karir',
       benefit3_pill2: 'Jaringan'
     },
+    committee: {
+      page_title: 'Kepengurusan | KEKL',
+      tag: 'Kepengurusan',
+      title: 'Struktur Organisasi',
+      subtitle: 'Kenali struktur kepengurusan KEKL, mulai dari kepengurusan pusat (BPP) hingga kepengurusan kota (BPK).',
+      bpp_tag: 'BPP',
+      bpp_title: 'Kepengurusan Pusat',
+      bpk_tag: 'BPK',
+      bpk_title: 'Kepengurusan Kota',
+      bpk_desc: 'Pilih kota untuk melihat susunan pengurusnya.',
+      city_label: 'Kota',
+      accordion_hint: 'Buka/Tutup',
+      member_caption: 'Profil singkat',
+      roles: {
+        chair: 'Ketua',
+        vice_chair: 'Wakil Ketua',
+        secretary: 'Sekretaris',
+        treasurer: 'Bendahara',
+        programs: 'Koordinator Program',
+        communications: 'Koordinator Komunikasi',
+        events: 'Koordinator Kegiatan',
+        community: 'Koordinator Komunitas',
+        city_chair: 'Ketua BPK'
+      }
+    },
+    footer: {
+      committee_link: 'Kepanitiaan'
+    },
     programs: {
       tag: 'Program',
       title1: 'Program',
@@ -164,6 +192,34 @@ export const translations = {
       benefit3_desc: 'Direct guidance from successful alumni to help shape career paths and build professional networks.',
       benefit3_pill1: 'Career Guidance',
       benefit3_pill2: 'Networking'
+    },
+    committee: {
+      page_title: 'Committee | KEKL',
+      tag: 'Committee',
+      title: 'Organization Structure',
+      subtitle: 'Explore the KEKL organization structure, from the central committee (BPP) to city committees (BPK).',
+      bpp_tag: 'BPP',
+      bpp_title: 'Central Committee',
+      bpk_tag: 'BPK',
+      bpk_title: 'City Committees',
+      bpk_desc: 'Select a city to view its committee members.',
+      city_label: 'City',
+      accordion_hint: 'Toggle',
+      member_caption: 'Short profile',
+      roles: {
+        chair: 'Chair',
+        vice_chair: 'Vice Chair',
+        secretary: 'Secretary',
+        treasurer: 'Treasurer',
+        programs: 'Programs',
+        communications: 'Communications',
+        events: 'Events',
+        community: 'Community',
+        city_chair: 'City Chair'
+      }
+    },
+    footer: {
+      committee_link: 'Committee'
     },
     programs: {
       tag: 'Programs',

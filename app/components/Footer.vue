@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const { t } = useLanguage()
 const mapLink = "https://maps.app.goo.gl/bpam6Qfk66JSzRA4A"
 </script>
 
@@ -37,7 +38,7 @@ const mapLink = "https://maps.app.goo.gl/bpam6Qfk66JSzRA4A"
 
           <!-- Column 3 -->
           <ul class="space-y-4 text-white">
-            <li><a href="#" class="hover:text-loyola-red transition-colors text-[14px]">Alumni Regional Chapter (BPK)</a></li>
+            <li><NuxtLink to="/committee" class="hover:text-loyola-red transition-colors text-[14px]">{{ t('footer.committee_link') }}</NuxtLink></li>
             <li><a href="#" class="hover:text-loyola-red transition-colors text-[14px]">Endowment Fund (Dana Abadi)</a></li>
             <li><a href="#" class="hover:text-loyola-red transition-colors text-[14px]">Scholarship (Beasiswa)</a></li>
             <li><a href="#" class="hover:text-loyola-red transition-colors text-[14px]">Hobby Club (Organisasi Hobi)</a></li>
@@ -86,7 +87,7 @@ const mapLink = "https://maps.app.goo.gl/bpam6Qfk66JSzRA4A"
             <ul class="flex flex-col md:flex-row text-left gap-y-4 md:gap-x-6 lg:gap-x-8 font-black text-[13px] md:text-[14px] text-white tracking-[0.12em] uppercase">
               <li><a href="#" class="hover:opacity-80">Loyola College</a></li>
               <li><a href="#" class="hover:opacity-80">Map & Directions</a></li>
-              <li><a href="#" class="hover:opacity-80">Committee</a></li>
+              <li><NuxtLink to="/committee" class="hover:opacity-80">{{ t('footer.committee_link') }}</NuxtLink></li>
             </ul>
             
             <!-- Group 2: Right Col (Mobile) / Row 2 (Desktop) -->

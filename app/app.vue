@@ -1,24 +1,10 @@
-<script setup lang="ts">
-useHead({
-  title: 'Alumni Directory | SMA KOLESE LOYOLA',
-})
-</script>
-
 <template>
   <div class="bg-bg-base min-h-screen text-text-body font-sans">
     <NuxtRouteAnnouncer />
     
     <Header />
     <main>
-      <Hero />
-      <IntroSection />
-      <AlumniBenefits />
-      <Programs />
-      <RegionalChapter />
-      <EndowmentFund />
-      <Scholarship />
-      <SocialFeed />
-      <FaqSection />
+      <NuxtPage />
     </main>
 
     <Footer />

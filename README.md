@@ -14,7 +14,7 @@ Website ini adalah landing page untuk komunitas KEKL (Eks Kolese Loyola) yang di
 
 ## Versi
 
-Versi saat ini: **0.1.7**
+Versi saat ini: **0.1.9**
 
 Skema versi menggunakan **Semantic Versioning (SemVer)**: `MAJOR.MINOR.PATCH`
 
@@ -345,6 +345,15 @@ Aturan:
 - Setiap perubahan fungsional/konfigurasi/deployment wajib menambah entry changelog di bawah.
 - Naikkan versi di bagian “Versi saat ini” dan tambahkan entri baru paling atas.
 - Format tanggal: `YYYY-MM-DD`.
+
+### 0.1.9 - 2026-06-20
+
+- Update menu footer: jadikan satu link “Committee” (EN) / “Kepanitiaan” (ID) yang mengarah ke `/committee`.
+
+### 0.1.8 - 2026-06-20
+
+- Tambah halaman baru `/committee` untuk struktur kepengurusan (BPP + BPK dengan accordion per kota).
+- Refactor routing agar mendukung halaman: pindahkan konten landing page ke `app/pages/index.vue` dan render halaman via `NuxtPage` di `app/app.vue`.
 
 ### 0.1.7 - 2026-06-20
 
