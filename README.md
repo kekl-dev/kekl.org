@@ -14,7 +14,7 @@ Website ini adalah landing page untuk komunitas KEKL (Eks Kolese Loyola) yang di
 
 ## Versi
 
-Versi saat ini: **0.1.9**
+Versi saat ini: **0.1.10**
 
 Skema versi menggunakan **Semantic Versioning (SemVer)**: `MAJOR.MINOR.PATCH`
 
@@ -86,7 +86,7 @@ npm run dev
 
 ### 4) Cara melakukan perubahan yang aman
 
-- Ubah urutan/penambahan section: edit `app/app.vue`.
+- Ubah urutan/penambahan section landing page: edit `app/pages/index.vue`.
 - Ubah konten teks (wajib multi-language):
   - Tambah/update key di `app/utils/translations.ts` untuk `id` dan `en`.
   - Gunakan `useLanguage().t('path.key')` di komponen.
@@ -185,7 +185,13 @@ Struktur utama project:
 
 ### Entry point halaman
 
-`app/app.vue` adalah halaman utama (single page) yang merangkai semua section secara berurutan:
+Project ini memakai file-based routing Nuxt:
+
+- Layout root: `app/app.vue` (berisi `Header`, `<NuxtPage />`, dan `Footer`)
+- Landing page: `app/pages/index.vue` (merangkai section-section di halaman utama)
+- Halaman tambahan: `app/pages/committee.vue` (path `/committee`)
+
+Urutan section pada landing page saat ini:
 
 1. `Header`
 2. `Hero`
@@ -199,7 +205,7 @@ Struktur utama project:
 10. `FaqSection`
 11. `Footer`
 
-Jika menambah/menghapus section, lakukan di `app/app.vue`.
+Jika menambah/menghapus section landing page, lakukan di `app/pages/index.vue`.
 
 ### Bahasa & terjemahan
 
@@ -345,6 +351,10 @@ Aturan:
 - Setiap perubahan fungsional/konfigurasi/deployment wajib menambah entry changelog di bawah.
 - Naikkan versi di bagian “Versi saat ini” dan tambahkan entri baru paling atas.
 - Format tanggal: `YYYY-MM-DD`.
+
+### 0.1.10 - 2026-06-20
+
+- Jadikan logo header clickable dan mengarah ke home (`/`).
 
 ### 0.1.9 - 2026-06-20
 

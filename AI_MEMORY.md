@@ -25,8 +25,10 @@ Catatan: karena Firebase Hosting tidak menjalankan Node server untuk SSR, pastik
 
 ## Struktur source
 
-- Entry point halaman: `app/app.vue`
-  - Merangkai section: Header → Hero → IntroSection → AlumniBenefits → Programs → RegionalChapter → EndowmentFund → Scholarship → SocialFeed → FaqSection → Footer
+- Routing Nuxt (file-based):
+  - Layout root: `app/app.vue` (berisi `Header`, `<NuxtPage />`, dan `Footer`)
+  - Landing page: `app/pages/index.vue` (merangkai section landing page)
+  - Halaman committee: `app/pages/committee.vue` (path `/committee`)
 - Komponen: `app/components/*`
 - Terjemahan: `app/utils/translations.ts`
   - Menggunakan composable `useLanguage()` (`app/composables/useLanguage.ts`)
@@ -90,4 +92,3 @@ Langkah cepat:
 
 - Source of truth versi & changelog ada di `README.md` (SemVer).
 - Setiap perubahan fungsional/konfigurasi/dependency wajib menaikkan versi dan menambah entri changelog.
-

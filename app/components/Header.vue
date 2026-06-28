@@ -65,9 +65,9 @@ onUnmounted(() => {
 
         <div class="flex h-[80px] lg:h-[100px] items-center justify-between lg:py-0">
           <!-- Logo Section -->
-          <div class="flex items-center shrink-0 h-full bg-loyola-red relative w-[160px] md:w-[220px] lg:w-[290px] pl-6 md:pl-8 lg:pl-12 transition-all duration-300 before:content-[''] before:absolute before:right-full before:top-0 before:bottom-0 before:w-screen before:bg-loyola-red">
+          <NuxtLink to="/" aria-label="Home" class="flex items-center shrink-0 h-full bg-loyola-red relative w-[160px] md:w-[220px] lg:w-[290px] pl-6 md:pl-8 lg:pl-12 transition-all duration-300 before:content-[''] before:absolute before:right-full before:top-0 before:bottom-0 before:w-screen before:bg-loyola-red">
             <img src="~/assets/img/kekl-white.png" alt="Loyola Alumni" class="h-16 lg:h-18 w-auto object-contain relative z-10">
-          </div>
+          </NuxtLink>
 
           <!-- Mobile Action Buttons -->
           <div class="flex lg:hidden items-center gap-2 sm:gap-3 pr-6">
