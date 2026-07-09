@@ -9,7 +9,7 @@ const { t } = useLanguage()
       <!-- Left Content: Text & CTA -->
       <div class="flex-1 space-y-6 md:space-y-10 text-left">
         <h2 class="text-3xl md:text-4xl font-sans text-[#f9f9f9] leading-[1.1] tracking-tight">
-          {{ t('intro.title1') }}<br>
+          Connect • Share • Collaborate<br>
           <span class="text-accent font-bold">{{ t('intro.title2') }}</span>
         </h2>
 
@@ -47,9 +47,8 @@ const { t } = useLanguage()
 
           <!-- Caption styling -->
           <div class="mt-6 text-right space-y-1">
-            <p class="text-sm font-bold text-[#f9f9f9]">How to Update Your KEKL Directory Profile</p>
-            <p class="text-[12px] text-[#f9f9f9] italic">Please note that all Loyola College alumni may create an account in the KEKL Directory. <br> Please report any misuse or any actions that violate the terms to the administrator.
-            </p>
+            <p class="text-sm font-bold text-[#f9f9f9]">{{ t('intro.video_title') }}</p>
+            <p class="text-[12px] text-[#f9f9f9] italic" v-html="t('intro.video_caption')"></p>
           </div>
         </div>
       </div>

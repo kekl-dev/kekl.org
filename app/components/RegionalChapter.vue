@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const { t } = useLanguage()
+</script>
+
 <template>
   <section class="bg-white py-16 md:py-24 px-6 md:px-20 overflow-hidden">
     
@@ -7,16 +11,16 @@
       <div class="animate-slide-up">
         <p class="inline-flex items-center gap-2 text-[11px] font-black tracking-[0.25em] uppercase text-loyola-red mb-4">
           <span class="h-px w-6 bg-loyola-red inline-block"></span>
-          Regional Chapter
+          {{ t('regional.tag') }}
         </p>
         <h2 class="text-3xl md:text-5xl font-sans font-black text-[#111111] leading-tight tracking-tight mt-1 mb-6">
-          Alumni Regional Chapter <span class="text-loyola-red">(BPK)</span>
+          {{ t('regional.title1') }} <span class="text-loyola-red">{{ t('regional.title2') }}</span>
         </h2>
         <p class="text-[16px] md:text-[18px] text-[#5a6373] leading-relaxed font-medium mb-8">
-          Reuniting Loyola alumni across regions to strengthen bonds and expand collaboration. Join fellow alumni in your area to build meaningful connections, foster community spirit, and create opportunities for shared initiatives that support the KEKL family.
+          {{ t('regional.description') }}
         </p>
         <a href="#" class="inline-flex items-center justify-center rounded-xl bg-loyola-red text-white px-8 py-4 text-[13px] font-black tracking-[0.18em] uppercase hover:bg-loyola-red/90 transition-all duration-300 shadow-[0_4px_16px_rgba(140,21,21,0.20)] hover:shadow-[0_8px_24px_rgba(140,21,21,0.30)]">
-          Find Your Chapter
+          {{ t('regional.btn') }}
         </a>
       </div>
 

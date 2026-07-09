@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const { t } = useLanguage()
 </script>
 
 <template>
@@ -13,18 +14,18 @@
     <!-- Centered Content -->
     <div class="relative z-10 max-w-5xl px-8 text-center text-white flex-1 flex flex-col justify-center mb-10 ">
       <p class="w-fit mx-auto px-5 py-2 border border-white/20 rounded-full bg-white/10 backdrop-blur-md text-xs md:text-sm font-medium mb-8 animate-fade-in tracking-widest text-accent-yellow drop-shadow-sm uppercase">
-        LOYOLA COLLEGE ALUMNI DIRECTORY
+        {{ t('hero.tag') }}
       </p>
       
       <h1 class="text-[rgb(255,255,255,0.4)]  text-5xl md:text-7xl font-sans font-black mb-8 md:mb-10 leading-[1.05] animate-slide-up tracking-tight">
-        Being Men and Women<br> 
+        {{ t('hero.title1') }}<br> 
         <span class="text-[rgb(255,255,255,0.4)] inline-block">
-           for and with others
+           {{ t('hero.title2') }}
         </span>
       </h1>
 
       <p class="text-[15px] md:text-xl font-medium max-w-2xl mx-auto mb-12 md:mb-16 text-white/90 leading-relaxed drop-shadow-md px-4 md:px-0">
-        Find and connect with fellow alumni. Explore potential collaborations with peers who share the same values.
+        {{ t('hero.desc') }}
       </p>
 
       <!-- Action Links -->
@@ -35,7 +36,7 @@
             <Icon name="lucide:book-open" class="w-6 h-6" />
           </div>
           <div class="relative py-1">
-            <span>Visit Alumni Directory <Icon name="lucide:arrow-right" class="text-accent-yellow group-hover:translate-x-1 inline-block transition-transform ml-1" /></span>
+            <span>{{ t('hero.btn_visit') }} <Icon name="lucide:arrow-right" class="text-accent-yellow group-hover:translate-x-1 inline-block transition-transform ml-1" /></span>
             <!-- Animated Sliding Underline -->
             <div class="absolute bottom-0 left-0 w-0 h-[2px] bg-accent-yellow transition-all duration-500 ease-out group-hover:w-full"></div>
           </div>
@@ -47,7 +48,7 @@
             <Icon name="lucide:user" class="w-6 h-6" />
           </div>
           <div class="relative py-1">
-            <span>Update your Profile <Icon name="lucide:arrow-right" class="text-accent-yellow group-hover:translate-x-1 inline-block transition-transform ml-1" /></span>
+            <span>{{ t('hero.btn_update') }} <Icon name="lucide:arrow-right" class="text-accent-yellow group-hover:translate-x-1 inline-block transition-transform ml-1" /></span>
             <!-- Animated Sliding Underline -->
             <div class="absolute bottom-0 left-0 w-0 h-[2px] bg-accent-yellow transition-all duration-500 ease-out group-hover:w-full"></div>
           </div>
@@ -59,7 +60,7 @@
             <Icon name="lucide:help-circle" class="w-6 h-6" />
           </div>
           <div class="relative py-1">
-            <span>Read FAQs <Icon name="lucide:chevron-down" class="text-accent-yellow group-hover:translate-y-1 inline-block transition-transform ml-1" /></span>
+            <span>{{ t('hero.btn_faq') }} <Icon name="lucide:chevron-down" class="text-accent-yellow group-hover:translate-y-1 inline-block transition-transform ml-1" /></span>
             <!-- Animated Sliding Underline -->
             <div class="absolute bottom-0 left-0 w-0 h-[2px] bg-accent-yellow transition-all duration-500 ease-out group-hover:w-full"></div>
           </div>
@@ -75,8 +76,7 @@
 
     <!-- Bottom Attribution Bar -->
     <div class="relative w-full py-5 text-center text-sm font-light text-white/60">
-      <div class="max-w-4xl mx-auto px-8">
-        Access to the Alumni Directory is restricted to registered members. <br> A preliminary verification process will be conducted to confirm member authenticity.
+      <div class="max-w-4xl mx-auto px-8" v-html="t('hero.footer_desc')">
       </div>
     </div>
   </section>

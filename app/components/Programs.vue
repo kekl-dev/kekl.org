@@ -1,26 +1,27 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 const { t } = useLanguage()
 
-const programs = [
+const programs = computed(() => [
   {
-    title: 'Alumni Regional Chapter (BPK)',
-    description: 'Reuniting Loyola alumni across regions to strengthen bonds and expand collaboration.Join fellow alumni in your area to build meaningful connections, foster community spirit, and create opportunities for shared initiatives that support the KEKL family.',
+    title: t('regional.title1') + ' ' + t('regional.title2'),
+    description: t('regional.description'),
     image: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=800&auto=format&fit=crop',
     link: '#'
   },
   {
-    title: 'Endowment Fund (Dana Abadi)',
-    description: 'A long‑term investment dedicated to sustaining KEKL’s mission and future impact.Your contribution to the KEKL Endowment Fund helps secure ongoing support for educational programs, community development, and initiatives that preserve the legacy of Loyola for generations to come.',
+    title: t('endowment.title1') + ' ' + t('endowment.title2'),
+    description: t('endowment.description'),
     image: 'https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=800&auto=format&fit=crop',
     link: 'https://kekl-scholarship-danaabadi.framer.website/dana-abadi'
   },
   {
-    title: 'Scholarship (Beasiswa)',
-    description: 'Opening doors to education for deserving Loyola students.The KEKL Scholarship Program provides financial assistance to students in need, ensuring they can continue their studies and pursue their potential with confidence and hope.',
+    title: t('scholarship.title_black') + ' ' + t('scholarship.title_red'),
+    description: t('scholarship.description'),
     image: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?q=80&w=800&auto=format&fit=crop',
     link: 'https://kekl-scholarship-danaabadi.framer.website/'
   }
-]
+])
 </script>
 
 <template>

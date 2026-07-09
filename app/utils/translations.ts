@@ -18,7 +18,9 @@ export const translations = {
       desc2_start: 'Lihat ',
       desc2_link: 'video',
       desc2_end: ' kami untuk kiat tentang cara menggunakan Direktori KEKL dan mulailah membuat koneksi hari ini!',
-      btn_visit: 'Kunjungi Direktori KEKL'
+      btn_visit: 'Kunjungi Direktori KEKL',
+      video_title: 'Cara Memperbarui Profil Direktori KEKL Anda',
+      video_caption: 'Harap dicatat bahwa semua alumni Kolese Loyola dapat membuat akun di Direktori KEKL. <br> Silakan laporkan penyalahgunaan atau tindakan apa pun yang melanggar ketentuan kepada administrator.'
     },
     faq: {
       tag: 'FAQ',
@@ -122,6 +124,32 @@ export const translations = {
       benefit2_desc: 'Lebih dekat dengan komunitas yang penting bagi Anda dengan kolom pencarian seperti ketertarikan komunitas, minat, bidang studi, lokasi, dan tahun angkatan.',
       benefit3_title: 'Koneksi Karir',
       benefit3_desc: 'Buka pintu untuk peluang masa depan dengan menemukan orang lain berdasarkan industri, perusahaan, keterampilan & spesialisasi, jabatan, dan ketersediaan untuk menawarkan dukungan karir.'
+    },
+    regional: {
+      tag: 'Badan Pengurus Kota',
+      title1: 'Badan Pengurus Kota',
+      title2: '(BPK)',
+      description: 'Menyatukan kembali alumni Loyola di berbagai daerah untuk memperkuat ikatan dan memperluas kolaborasi. Bergabunglah dengan rekan-rekan alumni di daerah Anda untuk membangun koneksi yang bermakna, menumbuhkan semangat kebersamaan, dan menciptakan peluang inisiatif bersama yang mendukung keluarga KEKL.',
+      btn: 'Temukan BPK Anda'
+    },
+    nav: {
+      events: 'Acara',
+      story: 'Cerita',
+      programs: 'Program',
+      merchandise: 'Merchandise',
+      volunteer: 'Relawan'
+    },
+    footer: {
+      address_title: 'SMA Kolese Loyola',
+      address_street: 'Jl. Karang Anyar No.37',
+      address_city: 'Semarang, Jawa Tengah 50135',
+      map: 'Peta & Arah',
+      hobby: 'Hobby Club (Organisasi Hobi)',
+      access_dir: 'Akses Direktori KEKL',
+      feedback: 'Umpan Balik',
+      terms: 'Syarat Penggunaan',
+      privacy: 'Kebijakan Privasi',
+      committee: 'Panitia'
     }
   },
   en: {
@@ -143,7 +171,9 @@ export const translations = {
       desc2_start: 'Check out our ',
       desc2_link: 'video',
       desc2_end: ' for tips on how to use KEKL Directory and start making connections today!',
-      btn_visit: 'Visit KEKL Directory'
+      btn_visit: 'Visit KEKL Directory',
+      video_title: 'How to Update Your KEKL Directory Profile',
+      video_caption: 'Please note that all Loyola College alumni may create an account in the KEKL Directory. <br> Please report any misuse or any actions that violate the terms to the administrator.'
     },
     faq: {
       tag: 'FAQ',
@@ -247,6 +277,32 @@ export const translations = {
       benefit2_desc: 'Get closer to the communities that matter to you with search fields like community affinity, interests, area of study, location, and class year.',
       benefit3_title: 'Career Connections',
       benefit3_desc: 'Open the door for future opportunities by finding others based on industry, company, skills & specialties, job title, and availability to offer career support.'
+    },
+    regional: {
+      tag: 'Regional Chapter',
+      title1: 'Alumni Regional Chapter',
+      title2: '(BPK)',
+      description: 'Reuniting Loyola alumni across regions to strengthen bonds and expand collaboration. Join fellow alumni in your area to build meaningful connections, foster community spirit, and create opportunities for shared initiatives that support the KEKL family.',
+      btn: 'Find Your Chapter'
+    },
+    nav: {
+      events: 'Events',
+      story: 'Story',
+      programs: 'Programs',
+      merchandise: 'Merchandise',
+      volunteer: 'Volunteer'
+    },
+    footer: {
+      address_title: 'Loyola Senior High School',
+      address_street: 'Karang Anyar Street No.37',
+      address_city: 'Semarang, Central Java 50135',
+      map: 'Map & Directions',
+      hobby: 'Hobby Club (Organisasi Hobi)',
+      access_dir: 'Access KEKL Directory',
+      feedback: 'Feedback',
+      terms: 'Terms of Use',
+      privacy: 'Privacy Policy',
+      committee: 'Committee'
     }
   }
 }
