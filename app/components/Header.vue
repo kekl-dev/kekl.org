@@ -55,8 +55,8 @@ onUnmounted(() => {
                 <polyline points="9 22 9 12 15 12 15 22"/>
               </svg>
             </NuxtLink>
-            <a href="https://kekl-scholarship-danaabadi.framer.website/dana-abadi" class="hover:text-accent-yellow transition-colors">Dana abadi</a>
-            <a href="https://kekl-scholarship-danaabadi.framer.website/" class="hover:text-accent-yellow transition-colors">Beasiswa</a>
+            <a href="https://danaabadi.kekl.org/abadi" class="hover:text-accent-yellow transition-colors">Dana abadi</a>
+            <a href="https://beasiswa.kekl.org/" class="hover:text-accent-yellow transition-colors">Beasiswa</a>
           </div>
             <a href="https://connext.kekl.org/" class="hover:text-accent-yellow flex items-center gap-1 transition-colors">
               KEKL Directory <Icon name="lucide:arrow-up-right" class="w-2.5 h-2.5 opacity-80" />
