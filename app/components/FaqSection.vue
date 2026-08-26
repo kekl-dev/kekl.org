@@ -79,18 +79,14 @@ watch(faqData, (newData) => {
 }, { immediate: true })
 
 const allExpanded = computed(() => faqData.value.length > 0 && expandedItems.value.length === faqData.value.length && expandedItems.value.every(item => item === true))
-const allCollapsed = computed(() => expandedItems.value.length === faqData.value.length && expandedItems.value.every(item => item === false))
 
 const toggleItem = (index: number) => {
   expandedItems.value[index] = !expandedItems.value[index]
 }
 
-const expandAll = () => {
-  expandedItems.value = new Array(faqData.value.length).fill(true)
-}
-
-const collapseAll = () => {
-  expandedItems.value = new Array(faqData.value.length).fill(false)
+const toggleAll = () => {
+  const targetState = !allExpanded.value
+  expandedItems.value = new Array(faqData.value.length).fill(targetState)
 }
 </script>
 
@@ -100,7 +96,7 @@ const collapseAll = () => {
 
       <!-- Heading -->
       <div class="text-center mb-12 md:mb-16">
-        <p class="inline-flex items-center gap-2 text-[11px] font-black tracking-[0.25em] uppercase text-loyola-red mb-4">
+        <p class="inline-flex items-center gap-2 text-[16px] font-black tracking-[0.25em] uppercase text-loyola-red mb-4">
           <span class="h-px w-6 bg-loyola-red inline-block"></span>
           {{ t('faq.tag') }}
           <span class="h-px w-6 bg-loyola-red inline-block"></span>
@@ -114,28 +110,13 @@ const collapseAll = () => {
       </div>
 
       <!-- Expand / Collapse Controls -->
-      <div class="flex justify-center gap-3 mb-8 md:mb-10">
+      <div class="flex justify-center mb-8 md:mb-10">
         <button
-          @click="expandAll"
-          :disabled="allExpanded"
-          class="border px-5 py-2.5 text-[11px] font-black tracking-[0.18em] uppercase transition-all focus:outline-hidden flex items-center gap-2 rounded-full"
-          :class="allExpanded
-            ? 'border-gray-200 text-gray-400 bg-white cursor-not-allowed'
-            : 'border-loyola-red text-loyola-red bg-white hover:bg-loyola-red hover:text-white cursor-pointer shadow-[0_4px_16px_rgba(140,21,21,0.12)]'"
+          @click="toggleAll"
+          class="border border-loyola-red text-loyola-red bg-white hover:bg-loyola-red hover:text-white px-5 py-2.5 text-[11px] font-black tracking-[0.18em] uppercase transition-all focus:outline-hidden flex items-center gap-2 rounded-full cursor-pointer shadow-[0_4px_16px_rgba(140,21,21,0.12)]"
         >
-          {{ t('faq.btn_expand') }}
-          <Icon name="lucide:plus" class="w-3.5 h-3.5" />
-        </button>
-        <button
-          @click="collapseAll"
-          :disabled="allCollapsed"
-          class="border px-5 py-2.5 text-[11px] font-black tracking-[0.18em] uppercase transition-all focus:outline-hidden flex items-center gap-2 rounded-full"
-          :class="allCollapsed
-            ? 'border-gray-200 text-gray-400 bg-white cursor-not-allowed'
-            : 'border-black/20 text-[#111111] bg-white hover:bg-black/5 cursor-pointer hover:border-black/30 shadow-[0_4px_16px_rgba(0,0,0,0.06)]'"
-        >
-          {{ t('faq.btn_collapse') }}
-          <Icon name="lucide:minus" class="w-3.5 h-3.5" />
+          {{ allExpanded ? t('faq.btn_collapse') : t('faq.btn_expand') }}
+          <Icon :name="allExpanded ? 'lucide:minus' : 'lucide:plus'" class="w-3.5 h-3.5" />
         </button>
       </div>
 

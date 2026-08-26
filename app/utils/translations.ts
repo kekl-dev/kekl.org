@@ -95,9 +95,6 @@ export const translations = {
         city_chair: 'Ketua BPK'
       }
     },
-    footer: {
-      committee_link: 'Kepanitiaan'
-    },
     programs: {
       tag: 'Program',
       title1: 'Program',
@@ -247,9 +244,6 @@ export const translations = {
         community: 'Community',
         city_chair: 'City Chair'
       }
-    },
-    footer: {
-      committee_link: 'Committee'
     },
     programs: {
       tag: 'Programs',

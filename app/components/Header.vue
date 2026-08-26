@@ -59,7 +59,7 @@ onUnmounted(() => {
             <a href="https://beasiswa.kekl.org/" class="hover:text-accent-yellow transition-colors">Beasiswa</a>
           </div>
             <a href="https://connext.kekl.org/" class="hover:text-accent-yellow flex items-center gap-1 transition-colors">
-              KEKL Directory <Icon name="lucide:arrow-up-right" class="w-2.5 h-2.5 opacity-80" />
+              KEKL <span class="font-thin italic">Connext</span>  <Icon name="lucide:arrow-up-right" class="w-2.5 h-2.5 opacity-80" />
             </a>
           </div>
 
